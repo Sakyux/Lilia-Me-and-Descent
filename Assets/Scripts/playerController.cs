@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -9,14 +10,24 @@ public class playerController : MonoBehaviour
     public float moveSpeed = 0.1f;
     public float stamina = 100f;
     public float sanity = 100f;
+
+    public Scrollbar sanityBar;
+
+    
+    
+    
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame.
     void FixedUpdate()
     {
+
+        sanityBar.size = (sanity / 100);
+
+        
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
         {
@@ -77,7 +88,7 @@ public class playerController : MonoBehaviour
 
         }
         //TEMPORARY
-        if (Input.GetKey(KeyCode.Q) && sanity >= 20f)
+        if (Input.GetKey(KeyCode.Q) && sanity >= 0f)
         {
             sanity -= 1f;
 
@@ -88,9 +99,11 @@ public class playerController : MonoBehaviour
             sanity += 0.02f;
         }
 
+        
+
     }
 
-
+    
 
 
 
