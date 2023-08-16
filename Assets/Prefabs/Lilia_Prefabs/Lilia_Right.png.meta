@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e42a2df9468fdc84597c6b32cb495618
+guid: 0d5e3a1d55d4c1c45bc5f05be6d28fcb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4144345155228687997
-    second: Lilia_Front_0
+      213: -6937942809567393274
+    second: Lilia_Right_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lilia_Front_0
+      name: Lilia_Right_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 21
         y: 0
-        width: 38
-        height: 59
+        width: 55
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 381abfbf9045c76c0800000000000000
-      internalID: -4144345155228687997
+      spriteID: 60a82c306c977bf90800000000000000
+      internalID: -6937942809567393274
       vertices: []
       indices: 
       edges: []
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Lilia_Front_0: -4144345155228687997
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

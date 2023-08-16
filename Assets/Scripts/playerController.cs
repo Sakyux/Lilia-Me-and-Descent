@@ -13,12 +13,15 @@ public class playerController : MonoBehaviour
 
     public Scrollbar sanityBar;
 
+    public SpriteRenderer LiliaSprite;
+    public Sprite DownIdle, UpIdle, LeftIdle, RightIdle;
+    short HorizontalMovement = 0;
     
     
     
     void Start()
     {
-        
+        LiliaSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame.
@@ -26,7 +29,7 @@ public class playerController : MonoBehaviour
     {
 
         sanityBar.size = (sanity / 100);
-
+        
         
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
@@ -62,31 +65,37 @@ public class playerController : MonoBehaviour
             Vector2 newPosition = transform.position;
             newPosition.x -= moveSpeed;
             transform.position = newPosition;
-
+            LiliaSprite.sprite = LeftIdle;
+            
 
         }
+        
+
         if (Input.GetKey(KeyCode.D))
         {
             Vector2 newPosition = transform.position;
             newPosition.x += moveSpeed;
             transform.position = newPosition;
-
+            LiliaSprite.sprite = RightIdle;
 
         }
+
         if (Input.GetKey(KeyCode.W))
         {
             Vector2 newPosition = transform.position;
             newPosition.y += moveSpeed;
             transform.position = newPosition;
-
+            LiliaSprite.sprite = UpIdle;
         }
+
         if (Input.GetKey(KeyCode.S))
         {
             Vector2 newPosition = transform.position;
             newPosition.y -= moveSpeed;
             transform.position = newPosition;
-
+            LiliaSprite.sprite = DownIdle;
         }
+        
         //TEMPORARY
         if (Input.GetKey(KeyCode.Q) && sanity >= 0f)
         {
