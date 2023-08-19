@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float sanity = 100f;
 
     public float movement;
-    public Scrollbar sanityBar;
+    public Image sanityBar;
     
     void Start()
     {
@@ -22,25 +22,25 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //sanityBar.size = (sanity / 100);
+        sanityBar.fillAmount = (sanity / 100);
         
+        
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f)
             {
                 movement = sprintSpeed;
-                stamina -= 0.5f;
+                stamina -= 0.6f;
             } 
             else {
                 movement = walkSpeed;
+                if (stamina < 100f) stamina += 0.3f; // Slow stamina regen when movement is active
             }
         
-        if (stamina < 100f) {
-                stamina += 0.3f; // Slow stamina regen when movement is active
-            }
-        }
+        } else if (stamina < 100f) stamina += 0.6f; //Normal stamina regen
 
-        if (stamina < 100f) stamina += 1f; // Normal stamina regen
+        
         if (stamina <= 1f) movement = 0.05f; // Slow movement speed when 0 stamina
         
         if (Input.GetKey(KeyCode.A))

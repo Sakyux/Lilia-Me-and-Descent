@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lilia_SideWalk3_0: -3527788779068617416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

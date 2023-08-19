@@ -200,7 +200,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lilia_BackWalk-sheet_0: 3636986930871699991
+      Lilia_BackWalk-sheet_1: 4228548619738532784
+      Lilia_BackWalk-sheet_2: 6419648240480371897
+      Lilia_BackWalk-sheet_3: 4481883125874971872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

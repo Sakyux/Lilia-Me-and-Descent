@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lilia_FrontSprint1_0: -8893478040667367314
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
