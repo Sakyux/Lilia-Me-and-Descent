@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class staminaBar : MonoBehaviour
+public class StaminaBar : MonoBehaviour
 {
     public GameObject firstObject;
     private float barLength;
@@ -16,17 +16,14 @@ public class staminaBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerController playerControllerReference = firstObject.GetComponent<playerController>();
-        float stamina = playerControllerReference.stamina;
+        PlayerController PlayerControllerReference = firstObject.GetComponent<PlayerController>();
+        float stamina = PlayerControllerReference.stamina;
         barLength = stamina / 10;
         Vector2 newLength = transform.localScale;
         newLength.x = barLength;

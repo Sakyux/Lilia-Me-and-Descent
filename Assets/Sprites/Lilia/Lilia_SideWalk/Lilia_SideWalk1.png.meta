@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0d5e3a1d55d4c1c45bc5f05be6d28fcb
+guid: 311189fe25133ff40bbae56bfd8ef2d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6937942809567393274
-    second: Lilia_Right_0
+      213: 2551184154620866544
+    second: Lilia_SideWalk1_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lilia_Right_0
+      name: Lilia_SideWalk1_0
       rect:
         serializedVersion: 2
-        x: 21
+        x: 13
         y: 0
-        width: 55
-        height: 93
+        width: 36
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60a82c306c977bf90800000000000000
-      internalID: -6937942809567393274
+      spriteID: 0ff28ccc870a76320800000000000000
+      internalID: 2551184154620866544
       vertices: []
       indices: 
       edges: []

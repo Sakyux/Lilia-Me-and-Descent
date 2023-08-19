@@ -3,97 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float moveSpeed = 0.1f;
+    public float walkSpeed = 0.1f;
+    public float sprintSpeed = 0.2f;
     public float stamina = 100f;
     public float sanity = 100f;
 
+    public float movement;
     public Scrollbar sanityBar;
-
-    public SpriteRenderer LiliaSprite;
-    public Sprite DownIdle, UpIdle, LeftIdle, RightIdle;
-    short HorizontalMovement = 0;
-    
-    
     
     void Start()
     {
-        LiliaSprite = GetComponent<SpriteRenderer>();
+        movement = walkSpeed;
     }
 
-    // Update is called once per frame.
     void FixedUpdate()
     {
-
-        sanityBar.size = (sanity / 100);
+        //sanityBar.size = (sanity / 100);
         
-        
-
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f)
             {
-                moveSpeed = 0.2f;
+                movement = sprintSpeed;
                 stamina -= 0.5f;
+            } 
+            else {
+                movement = walkSpeed;
             }
-            else
-            {
-                moveSpeed = 0.1f;
-                if (stamina < 100f)
-                {
-                    stamina += 0.3f;
-                }
+        
+        if (stamina < 100f) {
+                stamina += 0.3f; // Slow stamina regen when movement is active
             }
         }
-        else
-        {
 
-            if (stamina < 100f)
-            {
-                stamina += 1f;
-            }
-        }
-        if (stamina <= 1f)
-        {
-            moveSpeed = 0.05f;
-        }
+        if (stamina < 100f) stamina += 1f; // Normal stamina regen
+        if (stamina <= 1f) movement = 0.05f; // Slow movement speed when 0 stamina
+        
         if (Input.GetKey(KeyCode.A))
         {
             Vector2 newPosition = transform.position;
-            newPosition.x -= moveSpeed;
+            newPosition.x -= movement;
             transform.position = newPosition;
-            LiliaSprite.sprite = LeftIdle;
-            
-
         }
         
-
         if (Input.GetKey(KeyCode.D))
         {
             Vector2 newPosition = transform.position;
-            newPosition.x += moveSpeed;
+            newPosition.x += movement;
             transform.position = newPosition;
-            LiliaSprite.sprite = RightIdle;
-
         }
 
         if (Input.GetKey(KeyCode.W))
         {
             Vector2 newPosition = transform.position;
-            newPosition.y += moveSpeed;
+            newPosition.y += movement;
             transform.position = newPosition;
-            LiliaSprite.sprite = UpIdle;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             Vector2 newPosition = transform.position;
-            newPosition.y -= moveSpeed;
+            newPosition.y -= movement;
             transform.position = newPosition;
-            LiliaSprite.sprite = DownIdle;
         }
         
         //TEMPORARY

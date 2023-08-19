@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: e42a2df9468fdc84597c6b32cb495618
+guid: f412d132c9022e443835fe955b35ffe4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4144345155228687997
-    second: Lilia_Front_0
+      213: 6521284902645691755
+    second: Lilia_FrontWalk-sheet_0
+  - first:
+      213: 6438322738847954380
+    second: Lilia_FrontWalk-sheet_1
+  - first:
+      213: -5031975398945964118
+    second: Lilia_FrontWalk-sheet_2
+  - first:
+      213: 9118196600734106801
+    second: Lilia_FrontWalk-sheet_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,7 +82,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -98,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lilia_Front_0
+      name: Lilia_FrontWalk-sheet_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 11
         y: 0
-        width: 60
-        height: 93
+        width: 40
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +121,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 381abfbf9045c76c0800000000000000
-      internalID: -4144345155228687997
+      spriteID: b6570555112408a50800000000000000
+      internalID: 6521284902645691755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lilia_FrontWalk-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc53a565b64895950800000000000000
+      internalID: 6438322738847954380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lilia_FrontWalk-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf32530905da2ab0800000000000000
+      internalID: -5031975398945964118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lilia_FrontWalk-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b44ee28f775a8e70800000000000000
+      internalID: 9118196600734106801
       vertices: []
       indices: 
       edges: []
@@ -121,7 +193,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lilia_Front_0: -4144345155228687997
+      Lilia_FrontWalk-sheet_0: 6521284902645691755
+      Lilia_FrontWalk-sheet_1: 6438322738847954380
+      Lilia_FrontWalk-sheet_2: -5031975398945964118
+      Lilia_FrontWalk-sheet_3: 9118196600734106801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
