@@ -14,17 +14,23 @@ public class PlayerController : MonoBehaviour
 
     public float movement;
     public Image sanityBar;
+
+    public GameObject deathScreen;
+    public Button respawnButton;
+    bool isDead;
     
     void Start()
     {
         movement = walkSpeed;
+        isDead = false;
+        deathScreen.SetActive(false);
     }
 
     void FixedUpdate()
     {
-        sanityBar.fillAmount = (sanity / 100);
         
         
+        // Stamina
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
@@ -42,35 +48,41 @@ public class PlayerController : MonoBehaviour
 
         
         if (stamina <= 1f) movement = 0.05f; // Slow movement speed when 0 stamina
-        
-        if (Input.GetKey(KeyCode.A))
-        {
-            Vector2 newPosition = transform.position;
-            newPosition.x -= movement;
-            transform.position = newPosition;
-        }
-        
-        if (Input.GetKey(KeyCode.D))
-        {
-            Vector2 newPosition = transform.position;
-            newPosition.x += movement;
-            transform.position = newPosition;
-        }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            Vector2 newPosition = transform.position;
-            newPosition.y += movement;
-            transform.position = newPosition;
-        }
 
-        if (Input.GetKey(KeyCode.S))
+        // Movement
+        if (isDead == false)
         {
-            Vector2 newPosition = transform.position;
-            newPosition.y -= movement;
-            transform.position = newPosition;
+            if (Input.GetKey(KeyCode.A))
+            {
+                Vector2 newPosition = transform.position;
+                newPosition.x -= movement;
+                transform.position = newPosition;
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                Vector2 newPosition = transform.position;
+                newPosition.x += movement;
+                transform.position = newPosition;
+            }
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                Vector2 newPosition = transform.position;
+                newPosition.y += movement;
+                transform.position = newPosition;
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                Vector2 newPosition = transform.position;
+                newPosition.y -= movement;
+                transform.position = newPosition;
+            }
         }
-        
+        // sanity
+
         //TEMPORARY
         if (Input.GetKey(KeyCode.Q) && sanity >= 0f)
         {
@@ -83,12 +95,34 @@ public class PlayerController : MonoBehaviour
             sanity += 0.02f;
         }
 
-        
+        sanityBar.fillAmount = (sanity / 100);
+
+
+        // death and respawn
+
+        if (sanity <= 0) Death();
+
+        respawnButton.onClick.AddListener(respawn);
 
     }
 
-    
+    public void Death()
+    {
+        //I made this a function incase we want to add more Death sources e.g. instakills so dont remove it.
+        isDead = true;
+        deathScreen.SetActive(true);
+    }
 
+    public void respawn()
+    {
+        isDead = false;
+        deathScreen.SetActive(false);
+        sanity = 100f;
+        Vector2 respawnPos = transform.position;
+        respawnPos.x = -9.5f;
+        respawnPos.y = -3.5f;
+        transform.position = respawnPos;
+    }
 
 
 
