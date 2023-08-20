@@ -12,18 +12,24 @@ public class PlayerController : MonoBehaviour
     public float stamina = 100f;
     public float sanity = 100f;
 
+    public Image StaminaBarLeft, StaminaBarRight;
+
     public float movement;
     public Image sanityBar;
 
     public GameObject deathScreen;
     public Button respawnButton;
     bool isDead;
+
+    private Vector3 respawnPosition;
     
     void Start()
     {
         movement = walkSpeed;
         isDead = false;
         deathScreen.SetActive(false);
+
+        respawnPosition = transform.position;
     }
 
     void FixedUpdate()
@@ -48,6 +54,9 @@ public class PlayerController : MonoBehaviour
 
         
         if (stamina <= 1f) movement = 0.05f; // Slow movement speed when 0 stamina
+
+        StaminaBarLeft.fillAmount = (stamina / 100 - 0.01f);
+        StaminaBarRight.fillAmount = (stamina / 100 - 0.01f);
 
 
         // Movement
@@ -100,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
         // death and respawn
 
-        if (sanity <= 0) Death();
+        if (sanity <= 0) Invoke("Death", 0);
 
         respawnButton.onClick.AddListener(respawn);
 
@@ -110,6 +119,7 @@ public class PlayerController : MonoBehaviour
     {
         //I made this a function incase we want to add more Death sources e.g. instakills so dont remove it.
         isDead = true;
+        
         deathScreen.SetActive(true);
     }
 
@@ -118,12 +128,19 @@ public class PlayerController : MonoBehaviour
         isDead = false;
         deathScreen.SetActive(false);
         sanity = 100f;
-        Vector2 respawnPos = transform.position;
-        respawnPos.x = -9.5f;
-        respawnPos.y = -3.5f;
-        transform.position = respawnPos;
+        
     }
 
+    // Respawn points
 
+    private void OnTriggerEnter2D( Collider2D other)
+    {
+        if (other.CompareTag("Respawn")) respawnPosition = other.transform.position;
+    }
+
+    public void Respawn()
+    {
+        transform.position = respawnPosition;
+    }
 
 }
