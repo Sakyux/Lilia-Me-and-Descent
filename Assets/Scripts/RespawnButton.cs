@@ -10,6 +10,7 @@ public class RespawnButton : MonoBehaviour
     public Button respawnButton;
 
     // Start is called before the first frame update.
+
     void Start()
     {
         respawnButton.onClick.AddListener(RespawnPlayer);

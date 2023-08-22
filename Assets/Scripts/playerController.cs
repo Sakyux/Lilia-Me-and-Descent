@@ -25,10 +25,6 @@ public class PlayerController : MonoBehaviour
     public Button respawnButton;
     bool isDead;
     private Vector3 respawnPosition;
-
-    // main menu
-    public GameObject mainMenu;
-    public Button newGameButton;
     
     void Start()
     {
@@ -131,10 +127,6 @@ public class PlayerController : MonoBehaviour
         if (sanity <= 0) Invoke("Death", 0);
         respawnButton.onClick.AddListener(respawn);
 
-        // Main Menu
-
-        newGameButton.onClick.AddListener(NewGame);
-
     }
     public void Death() //I made this a function incase we want to add more Death sources e.g. instakills so dont remove it.
     {
@@ -161,8 +153,4 @@ public class PlayerController : MonoBehaviour
         transform.position = respawnPosition;
     }
 
-    public void NewGame()
-    {
-        mainMenu.SetActive(false);
-    }
 }

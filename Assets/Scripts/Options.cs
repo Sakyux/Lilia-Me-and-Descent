@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OptionsButton : MonoBehaviour
+public class Options : MonoBehaviour
 {
-    public Button Options;
+    public Button Back;
     public GameObject OptionsPanel;
     // Start is called before the first frame update
     void Start()
     {
-        OptionsPanel.SetActive(false);
-        Options.onClick.AddListener(OptionsMenu);
+        Back.onClick.AddListener(GoBack);
     }
 
     // Update is called once per frame
-    void OptionsMenu()
+    void GoBack()
     {
-        OptionsPanel.SetActive(true);
+        OptionsPanel.SetActive(false);
     }
 }
