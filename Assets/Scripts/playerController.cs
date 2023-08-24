@@ -112,5 +112,4 @@ public class PlayerController : MonoBehaviour
         sanityBar.fillAmount = (sanity / 100);
 
     }
-  
 }

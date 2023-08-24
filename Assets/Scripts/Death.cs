@@ -21,7 +21,7 @@ public class Death : MonoBehaviour
         isDead = false;
         deathScreen.SetActive(false);
         respawnPosition = player.transform.position;
-        if (respawnPosition == player.transform.position) Debug.Log("yes");
+        
     }
 
     // Update is called once per frame
@@ -46,12 +46,6 @@ public class Death : MonoBehaviour
         deathScreen.SetActive(false);
         playerRespawner.sanity = 100;
         player.transform.position = respawnPosition;
-    }
-
-    // Respawn points   
-    private void OnTriggerEnter2D(Collider2D other) // detects when respawn point is triggered
-    {
-        if (other.CompareTag("Respawn")) respawnPosition = other.transform.position;
     }
 
 }
