@@ -12,8 +12,12 @@ public class MainMenu : MonoBehaviour
     // menus
     public GameObject optionsMenu;
     public GameObject mainMenu;
+
+    public PlayerController playerController;
     void Start()
     {
+        
+
         optionsMenu.SetActive(false);
 
         // button interactions
@@ -24,6 +28,7 @@ public class MainMenu : MonoBehaviour
     public void NewGame()
     {
         mainMenu.SetActive(false);
+        playerController.isDead = false;
     }
     void Options()
     {

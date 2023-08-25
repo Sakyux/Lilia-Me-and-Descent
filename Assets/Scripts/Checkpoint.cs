@@ -15,10 +15,8 @@ public class Checkpoint : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) // detects when respawn point is triggered
     {
-        Debug.Log("triggered");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("RespawnTag");
             respawnPosition = CheckPoint.transform.position;
             Death.respawnPosition = respawnPosition;
 

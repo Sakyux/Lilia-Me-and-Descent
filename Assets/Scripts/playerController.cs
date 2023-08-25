@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
     
     // sanity
     public float sanity = 100f;
+    public Image sanityBarBackGround;
     public Image sanityBar;
-
+    public bool isDead = true;
     
     
     void Start()
@@ -111,5 +112,21 @@ public class PlayerController : MonoBehaviour
 
         sanityBar.fillAmount = (sanity / 100);
 
+        // death
+        if (sanity <= 0) isDead = true;
+
+        if (isDead == true)
+        {
+            sanityBar.enabled = false;
+            sanityBarBackGround.enabled = false;
+            StaminaBarLeft.enabled = false;
+            StaminaBarRight.enabled = false;
+        } else
+        {
+            sanityBar.enabled = true;
+            sanityBarBackGround.enabled = true;
+            StaminaBarLeft.enabled = true;
+            StaminaBarRight.enabled = true;
+        }
     }
 }

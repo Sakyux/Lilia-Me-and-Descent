@@ -10,15 +10,16 @@ public class Death : MonoBehaviour
     public Button respawnButton;
     public bool isDead;
     public Vector3 respawnPosition;
-    public PlayerController playerRespawner;
+    public PlayerController playerController;
     public float sanity;
     
+
     // Start is called before the first frame update
     void Start()
     {
         respawnButton.onClick.AddListener(respawn);
+        respawnButton.onClick.AddListener(egg);
         
-        isDead = false;
         deathScreen.SetActive(false);
         respawnPosition = player.transform.position;
         
@@ -27,25 +28,29 @@ public class Death : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sanity = playerRespawner.sanity;
-        
+        sanity = playerController.sanity;
+        isDead = playerController.isDead;
         // kills the player after x seconds (Invoke thingy)
-        if (sanity <= 0) Invoke("Kill", 0);
+        if (isDead == true) Invoke("Kill", 0);
         
     }
     
     public void Kill() //I made this a function incase we want to add more Death sources e.g. instakills so dont remove it.
     {
-        isDead = true;
+        playerController.isDead = true;
         deathScreen.SetActive(true);
     }
 
     public void respawn()
     {
-        isDead = false;
+        playerController.isDead = false;
         deathScreen.SetActive(false);
-        playerRespawner.sanity = 100;
+        playerController.sanity = 100;
         player.transform.position = respawnPosition;
     }
 
+    public void egg()
+    {
+        Debug.Log("Button Detected");
+    }
 }
