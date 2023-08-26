@@ -18,7 +18,6 @@ public class Death : MonoBehaviour
     void Start()
     {
         respawnButton.onClick.AddListener(respawn);
-        respawnButton.onClick.AddListener(egg);
         
         deathScreen.SetActive(false);
         respawnPosition = player.transform.position;
@@ -49,8 +48,4 @@ public class Death : MonoBehaviour
         player.transform.position = respawnPosition;
     }
 
-    public void egg()
-    {
-        Debug.Log("Button Detected");
-    }
 }

@@ -12,14 +12,9 @@ public class PlayerController : MonoBehaviour
 
     // stamina
     public float stamina = 100f;
-    public Image StaminaBarLeft, StaminaBarRight;
-    public float currentBarOpacity;
-    public float targetOpacity = 0f;
     
     // sanity
     public float sanity = 100f;
-    public Image sanityBarBackGround;
-    public Image sanityBar;
     public bool isDead = true;
     
     
@@ -48,25 +43,7 @@ public class PlayerController : MonoBehaviour
 
         if (stamina <= 1f) movement = 0.05f; // Slow movement speed when 0 stamina
 
-        // stamina bar(s) fill amount based on stamina
-        StaminaBarLeft.fillAmount = (stamina / 100 - 0.01f);
-        StaminaBarRight.fillAmount = (stamina / 100 - 0.01f);
-
-        // bar fading in and out
-        currentBarOpacity = StaminaBarLeft.color.a;
-        if (stamina >= 100f) targetOpacity = 0;
-        else targetOpacity = 1;
-        if (currentBarOpacity != targetOpacity)
-        {
-            float step = Time.deltaTime * 2;
-            currentBarOpacity = Mathf.MoveTowards(currentBarOpacity, targetOpacity, step);
-
-            Color barColour = StaminaBarLeft.color;
-            barColour.a = currentBarOpacity;
-            StaminaBarLeft.color = barColour;
-            StaminaBarRight.color = barColour;
-        }
-
+        
         // Movement
         
             // left
@@ -110,23 +87,7 @@ public class PlayerController : MonoBehaviour
             sanity += 0.02f; // sanity regen
         }
 
-        sanityBar.fillAmount = (sanity / 100);
-
         // death
         if (sanity <= 0) isDead = true;
-
-        if (isDead == true)
-        {
-            sanityBar.enabled = false;
-            sanityBarBackGround.enabled = false;
-            StaminaBarLeft.enabled = false;
-            StaminaBarRight.enabled = false;
-        } else
-        {
-            sanityBar.enabled = true;
-            sanityBarBackGround.enabled = true;
-            StaminaBarLeft.enabled = true;
-            StaminaBarRight.enabled = true;
-        }
     }
 }
