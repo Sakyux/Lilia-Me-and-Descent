@@ -15,9 +15,8 @@ public class PlayerController : MonoBehaviour
     
     // sanity
     public float sanity = 100f;
-    public bool isDead = true;
-    
-    
+    public bool isDead = false;
+
     void Start()
     {
         movement = walkSpeed;

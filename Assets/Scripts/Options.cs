@@ -5,17 +5,39 @@ using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
-    public Button Back;
-    public GameObject OptionsPanel;
-    // Start is called before the first frame update
+    // buttons
+    public Button fullScreen, volume, screenResolution, back;
+    public GameObject optionsPanel;
+    private bool isFullscreen = true;
+   
     void Start()
     {
-        Back.onClick.AddListener(GoBack);
+        fullScreen.onClick.AddListener(FullScreen);
+        //back.onClick.AddListener(Back);
+        //back.onClick.AddListener(Back); 
+        back.onClick.AddListener(Back);
+        
     }
 
-    // Update is called once per frame
-    void GoBack()
+    private void FullScreen()
     {
-        OptionsPanel.SetActive(false);
+        isFullscreen = !isFullscreen;
+        Screen.fullScreen = isFullscreen;
+        if (Screen.fullScreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+            Debug.Log("true");
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+            Debug.Log("false");
+        }
+        if (Screen.fullScreen) Debug.Log("fullscreen");
+        else Debug.Log("not fullscreen");
+    }
+    void Back()
+    {
+        optionsPanel.SetActive(false);
     }
 }

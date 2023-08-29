@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // buttons
@@ -13,11 +13,9 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject mainMenu;
 
-    public PlayerController playerController;
+    public string mainScene;
     void Start()
     {
-        
-
         optionsMenu.SetActive(false);
 
         // button interactions
@@ -27,8 +25,8 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        mainMenu.SetActive(false);
-        playerController.isDead = false;
+        SceneManager.LoadScene(mainScene);
+        
     }
     void Options()
     {
