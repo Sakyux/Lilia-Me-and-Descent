@@ -2145,7 +2145,7 @@ GameObject:
   - component: {fileID: 1693681820}
   - component: {fileID: 1693681819}
   m_Layer: 5
-  m_Name: ScreenResolution
+  m_Name: Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3561,9 +3561,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullScreen: {fileID: 8876810823459519905}
-  screenResolution: {fileID: 0}
   back: {fileID: 4737160344600792282}
   volume: {fileID: 1497536229}
+  screenResolution: {fileID: 1693681819}
   optionsPanel: {fileID: 3256291263404054320}
 --- !u!114 &6547523362286684162
 MonoBehaviour:

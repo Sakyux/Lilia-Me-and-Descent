@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Options : MonoBehaviour
 {
     // buttons
-    public Button fullScreen, screenResolution, back;
+    public Button fullScreen, back;
     public Slider volume;
+    public TMP_Dropdown screenResolution;
     public GameObject optionsPanel;
     private bool isFullscreen = true;
    
@@ -15,7 +17,7 @@ public class Options : MonoBehaviour
     {
         fullScreen.onClick.AddListener(FullScreen);
         volume.onValueChanged.AddListener(ChangeVolume);
-        //back.onClick.AddListener(Back); 
+        screenResolution.onValueChanged.AddListener(ChangeResolution); 
         back.onClick.AddListener(Back);
         
     }
@@ -43,6 +45,23 @@ public class Options : MonoBehaviour
         AudioListener.volume = newVolume;
         Debug.Log(AudioListener.volume);
     }
+
+    private void ChangeResolution(int optionIndex)
+    {
+        switch (optionIndex)
+        {
+            case 0: // 1920 x 1080
+                Screen.SetResolution(1920, 1080, Screen.fullScreen);
+                break;
+            case 1: // 1366 x 768
+                Screen.SetResolution(1366, 768, Screen.fullScreen);
+                break;
+            case 2: // 1440 x 900
+                Screen.SetResolution(1440, 900, Screen.fullScreen);
+                break;
+        }
+    }
+
     void Back()
     {
         optionsPanel.SetActive(false);
