@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class Options : MonoBehaviour
 {
     // buttons
-    public Button fullScreen, volume, screenResolution, back;
+    public Button fullScreen, screenResolution, back;
+    public Slider volume;
     public GameObject optionsPanel;
     private bool isFullscreen = true;
    
     void Start()
     {
         fullScreen.onClick.AddListener(FullScreen);
-        //back.onClick.AddListener(Back);
+        volume.onValueChanged.AddListener(ChangeVolume);
         //back.onClick.AddListener(Back); 
         back.onClick.AddListener(Back);
         
@@ -35,6 +36,12 @@ public class Options : MonoBehaviour
         }
         if (Screen.fullScreen) Debug.Log("fullscreen");
         else Debug.Log("not fullscreen");
+    }
+
+    private void ChangeVolume(float newVolume)
+    {
+        AudioListener.volume = newVolume;
+        Debug.Log(AudioListener.volume);
     }
     void Back()
     {
