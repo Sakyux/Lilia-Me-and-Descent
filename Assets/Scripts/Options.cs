@@ -19,25 +19,12 @@ public class Options : MonoBehaviour
         volume.onValueChanged.AddListener(ChangeVolume);
         screenResolution.onValueChanged.AddListener(ChangeResolution); 
         back.onClick.AddListener(Back);
-        
     }
 
     private void FullScreen()
     {
-        isFullscreen = !isFullscreen;
-        Screen.fullScreen = isFullscreen;
-        if (Screen.fullScreen)
-        {
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-            Debug.Log("true");
-        }
-        else
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-            Debug.Log("false");
-        }
-        if (Screen.fullScreen) Debug.Log("fullscreen");
-        else Debug.Log("not fullscreen");
+            isFullscreen = !isFullscreen;
+            Screen.fullScreen = isFullscreen;
     }
 
     private void ChangeVolume(float newVolume)
