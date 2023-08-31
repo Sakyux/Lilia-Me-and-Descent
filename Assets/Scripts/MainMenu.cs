@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // buttons
-    public Button newGameButton;
-    public Button optionsButton;
+    public Button newGameButton, optionsButton, exitButton;
+
 
     // menus
     public GameObject optionsMenu;
@@ -19,11 +19,12 @@ public class MainMenu : MonoBehaviour
         optionsMenu.SetActive(false);
 
         // button interactions
-        optionsButton.onClick.AddListener(Options);
         newGameButton.onClick.AddListener(NewGame);
+        optionsButton.onClick.AddListener(Options);
+        exitButton.onClick.AddListener(Exit);
     }
 
-    public void NewGame()
+    void NewGame()
     {
         SceneManager.LoadScene(mainScene);
         
@@ -31,5 +32,9 @@ public class MainMenu : MonoBehaviour
     void Options()
     {
         optionsMenu.SetActive(true);
+    }
+    void Exit()
+    {
+        Application.Quit();
     }
 }
