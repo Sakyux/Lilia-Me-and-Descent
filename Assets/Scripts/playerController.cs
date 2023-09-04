@@ -26,9 +26,9 @@ public class PlayerController : MonoBehaviour
     {
         // Stamina
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))
         {
-            if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f)
+            if (Input.GetKey(KeyCode.X) && stamina > 0f)
             {
                 movement = sprintSpeed; 
                 stamina -= 0.6f; // stamina depletion during sprint
@@ -46,28 +46,28 @@ public class PlayerController : MonoBehaviour
         // Movement
         
             // left
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 Vector2 newPosition = transform.position;
                 newPosition.x -= movement;
                 transform.position = newPosition;
             }
             // right
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 Vector2 newPosition = transform.position;
                 newPosition.x += movement;
                 transform.position = newPosition;
             }
             // up
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 Vector2 newPosition = transform.position;
                 newPosition.y += movement;
                 transform.position = newPosition;
             }
             // down
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 Vector2 newPosition = transform.position;
                 newPosition.y -= movement;

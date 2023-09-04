@@ -38,6 +38,7 @@ public class Death : MonoBehaviour
     {
         playerController.isDead = true;
         deathScreen.SetActive(true);
+        respawnButton.Select();
     }
 
     public void respawn()

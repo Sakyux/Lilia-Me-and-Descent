@@ -7,7 +7,7 @@ using TMPro;
 public class Options : MonoBehaviour
 {
     // buttons
-    public Button fullScreen, back;
+    public Button fullScreen, back, newGame;
     public Slider volume;
     public TMP_Dropdown screenResolution;
     public GameObject optionsPanel;
@@ -15,6 +15,13 @@ public class Options : MonoBehaviour
    
     void Start()
     {
+        
+        if(volume != null && volume.IsActive())
+        {
+            if (Input.GetKey(KeyCode.LeftArrow)) volume.value -= 0.5f;
+            if (Input.GetKey(KeyCode.RightArrow)) volume.value += 0.5f;
+        }
+
         fullScreen.onClick.AddListener(FullScreen);
         volume.onValueChanged.AddListener(ChangeVolume);
         screenResolution.onValueChanged.AddListener(ChangeResolution); 
@@ -52,5 +59,6 @@ public class Options : MonoBehaviour
     void Back()
     {
         optionsPanel.SetActive(false);
+        newGame.Select();
     }
 }

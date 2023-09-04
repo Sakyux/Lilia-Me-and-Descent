@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    
     // buttons
-    public Button newGameButton, optionsButton, exitButton;
-
-
+    public Button newGameButton, optionsButton, exitButton, fullScreenButton;
+    
     // menus
     public GameObject optionsMenu;
     public GameObject mainMenu;
@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         optionsMenu.SetActive(false);
+
+        newGameButton.Select();
 
         // button interactions
         newGameButton.onClick.AddListener(NewGame);
@@ -32,6 +34,7 @@ public class MainMenu : MonoBehaviour
     void Options()
     {
         optionsMenu.SetActive(true);
+        fullScreenButton.Select();
     }
     void Exit()
     {
