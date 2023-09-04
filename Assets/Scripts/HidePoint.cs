@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HidePoint : MonoBehaviour
 {
@@ -12,10 +14,12 @@ public class HidePoint : MonoBehaviour
     public GameObject player;
     public Vector3 hideSpot;
     public Vector3 playerLeaveSpot;
+    public GameObject hidePrompt;
     // Start is called before the first frame update
     void Start()
     {
         hideSpot = hidePoint.transform.position;
+        hidePrompt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,11 +57,19 @@ public class HidePoint : MonoBehaviour
             player.transform.position = playerLeaveSpot;
         }
 
-        if (!playerHiding && playerNear && Input.GetKeyDown(KeyCode.Z))
+        if (!playerHiding && playerNear)
         {
-            playerHiding = true;
-            player.transform.position = hideSpot;
-            Debug.Log(player.transform.position);
+            hidePrompt.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                playerHiding = true;
+                player.transform.position = hideSpot;
+                Debug.Log(player.transform.position);
+            }
+        } 
+        else
+        {
+            hidePrompt.SetActive(false);
         }
     }
     private void CastRay(Vector2 direction, int rayIndex)
