@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    // movement speeds
+    // movement
     public float walkSpeed = 0.1f;
     public float sprintSpeed = 0.2f;
     public float movement;
+    public bool canMove = true;
 
     // stamina
     public float stamina = 100f;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))
         {
-            if (Input.GetKey(KeyCode.X) && stamina > 0f)
+            if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f)
             {
                 movement = sprintSpeed; 
                 stamina -= 0.6f; // stamina depletion during sprint
@@ -42,9 +43,10 @@ public class PlayerController : MonoBehaviour
 
         if (stamina <= 1f) movement = 0.05f; // Slow movement speed when 0 stamina
 
-        
+
         // Movement
-        
+        if (canMove && !isDead)
+        {
             // left
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -73,6 +75,7 @@ public class PlayerController : MonoBehaviour
                 newPosition.y -= movement;
                 transform.position = newPosition;
             }
+        }
         
         // sanity
 

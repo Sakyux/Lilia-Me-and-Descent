@@ -7,18 +7,12 @@ public class Death : MonoBehaviour
 {
     public GameObject deathScreen;
     public GameObject player;
-    public Button respawnButton;
-    public bool isDead;
     public Vector3 respawnPosition;
     public PlayerController playerController;
-    public float sanity;
-    
 
     // Start is called before the first frame update
     void Start()
     {
-        respawnButton.onClick.AddListener(respawn);
-        
         deathScreen.SetActive(false);
         respawnPosition = player.transform.position;
         
@@ -27,10 +21,8 @@ public class Death : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sanity = playerController.sanity;
-        isDead = playerController.isDead;
         // kills the player after x seconds (Invoke thingy)
-        if (isDead == true) Invoke("Kill", 0);
+        if (playerController.isDead) Invoke("Kill", 0);
         
     }
     
@@ -38,7 +30,7 @@ public class Death : MonoBehaviour
     {
         playerController.isDead = true;
         deathScreen.SetActive(true);
-        respawnButton.Select();
+        Invoke("respawn", 0);
     }
 
     public void respawn()
