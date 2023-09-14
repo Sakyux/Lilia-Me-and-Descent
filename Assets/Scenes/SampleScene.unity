@@ -772,6 +772,9 @@ MonoBehaviour:
   menu: {fileID: 1551864800}
   toggle: 0
   Inventory: {fileID: 1117567224}
+  Options: {fileID: 1425225963}
+  MainMenu: {fileID: 1177119563}
+  Quit: {fileID: 328268945}
   playerController: {fileID: 2369354810286416953}
 --- !u!1 &956751920
 GameObject:
@@ -2030,6 +2033,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 174726638424428861, guid: 1d7f3a6a301f2e14d9ada6b3fac9e20a, type: 3}
+      propertyPath: m_text
+      value: hello yes i am a normal upstanding citizen
+      objectReference: {fileID: 0}
     - target: {fileID: 245758713260517723, guid: 1d7f3a6a301f2e14d9ada6b3fac9e20a, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -2120,15 +2127,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3103695213244242186, guid: 1d7f3a6a301f2e14d9ada6b3fac9e20a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6
+      value: 17.628
       objectReference: {fileID: 0}
     - target: {fileID: 6523375528945567436, guid: 1d7f3a6a301f2e14d9ada6b3fac9e20a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -431.8215
+      value: -373.5797
       objectReference: {fileID: 0}
     - target: {fileID: 6523375528945567436, guid: 1d7f3a6a301f2e14d9ada6b3fac9e20a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 138.24966
+      value: 109.12883
       objectReference: {fileID: 0}
     - target: {fileID: 8318370335221038149, guid: 1d7f3a6a301f2e14d9ada6b3fac9e20a, type: 3}
       propertyPath: m_SortingOrder

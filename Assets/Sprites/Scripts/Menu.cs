@@ -7,11 +7,12 @@ public class Menu : MonoBehaviour
 {
     public GameObject menu;
     public bool toggle;
-    public Button Inventory;
+    public Button Inventory, Options, MainMenu, Quit;
     public PlayerController playerController;
     private void Start()
     {
         menu.SetActive(false);
+        Options.onClick.AddListener(Clickable);
     }
     void Update()
     {
@@ -23,5 +24,10 @@ public class Menu : MonoBehaviour
         }
         if (toggle) playerController.canMove = false;
         else playerController.canMove = true;
+    }
+
+    public void Clickable()
+    {
+        menu.SetActive(true);
     }
 }

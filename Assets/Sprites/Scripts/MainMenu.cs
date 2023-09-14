@@ -16,8 +16,6 @@ public class MainMenu : MonoBehaviour
     public string mainScene;
     void Start()
     {
-        optionsMenu.SetActive(false);
-
         newGameButton.Select();
 
         // button interactions
