@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         menu.SetActive(false);
-        Options.onClick.AddListener(Clickable);
+        Options.onClick.AddListener(OptionsMenu);
     }
     void Update()
     {
@@ -26,7 +26,7 @@ public class Menu : MonoBehaviour
         else playerController.canMove = true;
     }
 
-    public void Clickable()
+    public void OptionsMenu()
     {
         menu.SetActive(true);
     }
