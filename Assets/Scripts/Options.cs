@@ -28,6 +28,7 @@ public class Options : MonoBehaviour
         volume.onValueChanged.AddListener(ChangeVolume);
         screenResolution.onValueChanged.AddListener(ChangeResolution); 
         back.onClick.AddListener(Back);
+        
     }
 
     private void FullScreen()
