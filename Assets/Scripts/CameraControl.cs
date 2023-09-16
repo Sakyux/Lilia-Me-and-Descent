@@ -6,22 +6,18 @@ public class CameraControl : MonoBehaviour
 {
     public GameObject player;
 
-    public float xMin;
-    public float xMax;
-    public float yMin;
-    public float yMax;
-    // Start is called before the first frame update
     void Start()
     {
-        player= GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player"); // Creates "Player" tag to reference to
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float x = Mathf.Clamp(player.transform.position.x, xMin, xMax);
-        float y = Mathf.Clamp(player.transform.position.y, yMin, yMax);
+        // Finds the position of Lilia
+        float x = player.transform.position.x;
+        float y = player.transform.position.y;
 
+        // Changes position of the camera based off of Lilia
         gameObject.transform.position = new Vector3(x, y, gameObject.transform.position.z);
     }
 }

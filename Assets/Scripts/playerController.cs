@@ -5,91 +5,129 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    // movement
+    // Speed
     public float walkSpeed = 0.1f;
     public float sprintSpeed = 0.2f;
-    public float movement;
-    public bool canMove = true;
-
-    // stamina
-    public float stamina = 100f;
     
-    // sanity
-    public float sanity = 100f;
+    // Private fields
+    private Vector2 movement, newPosition;
+    private bool isSprinting = false;
+    private float currentSpeed;
+    public bool canMove = true;
     public bool isDead = false;
+
+    // Gameplay
+    public float stamina = 100f;
+    public float sanity = 100f;
+
+    // Animation
+    public Animator animator;
 
     void Start()
     {
-        movement = walkSpeed;
+        currentSpeed = walkSpeed;
+    }
+
+    void Update()
+    {
+        // Checks position
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        // Prevents additive speed
+        movement.Normalize();
+
+        // (FOR DEBUGGING)
+        Debug.Log("Stamina is at: " + stamina);
     }
 
     void FixedUpdate()
     {
         // Stamina
-
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))
         {
+            // Sprint function
             if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f)
             {
-                movement = sprintSpeed; 
-                stamina -= 0.6f; // stamina depletion during sprint
-            } 
-            else {
-                movement = walkSpeed;
-                if (stamina < 100f) stamina += 0.3f; // Slow stamina regen when movement is active
+                currentSpeed = sprintSpeed; 
+                stamina -= 0.5f; // Stamina depletion during sprint
+                isSprinting = true;
+            } else {
+                currentSpeed = walkSpeed;
+                isSprinting = false;    
+            }   
+
+/* (THE WHILE LOOPS SEEMS TO CRASH UNITY, NEEDS A BETTER SOLUTION)
+
+            if (stamina <= 0) { // Disables sprint upon stamina depletion
+                while (stamina <= 50) {
+                    currentSpeed = walkSpeed;
+                    isSprinting = false;
+                }
             }
-        
-        } else if (stamina < 100f) stamina += 0.6f; //Normal stamina regen
 
-        if (stamina <= 1f) movement = 0.05f; // Slow movement speed when 0 stamina
+*/
 
+        } else isSprinting = false;
 
-        // Movement
+        if (stamina < 100 && isSprinting == false) stamina += 0.5f; // Normal stamina regen
+
+        // Movement script
         if (canMove && !isDead)
         {
-            // left
+            newPosition = transform.position;
+            newPosition.x += movement.x * currentSpeed;
+            newPosition.y += movement.y * currentSpeed;
+
+            // Left
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                Vector2 newPosition = transform.position;
-                newPosition.x -= movement;
+                movement.x -= 1;
                 transform.position = newPosition;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
             }
-            // right
+            // Right
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                Vector2 newPosition = transform.position;
-                newPosition.x += movement;
+                movement.x += 1;
                 transform.position = newPosition;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
             }
-            // up
+            // Up
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                Vector2 newPosition = transform.position;
-                newPosition.y += movement;
+                movement.y += 1;
                 transform.position = newPosition;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
             }
-            // down
+            // Down
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                Vector2 newPosition = transform.position;
-                newPosition.y -= movement;
+                movement.y -= 1;
                 transform.position = newPosition;
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
             }
         }
-        
-        // sanity
 
-        //TEMPORARY SANITY DEPLETION - FOR TESTING PURPOSES
+        // Sets animator parameters
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetBool("Sprint", isSprinting);
+
+        // TEMPORARY SANITY DEPLETION - FOR TESTING PURPOSES
         if (Input.GetKey(KeyCode.Q) && sanity >= 0f)
         {
             sanity -= 1f;
         }
         else if (sanity <= 100f)
         {
-            sanity += 0.02f; // sanity regen
+            sanity += 0.02f; // Sanity regeneration
         }
 
-        // death
+        // Checks Death
         if (sanity <= 0) isDead = true;
     }
 }
