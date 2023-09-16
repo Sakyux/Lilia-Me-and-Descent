@@ -57,17 +57,13 @@ public class PlayerController : MonoBehaviour
                 isSprinting = false;    
             }   
 
-/* (THE WHILE LOOPS SEEMS TO CRASH UNITY, NEEDS A BETTER SOLUTION)
-
             if (stamina <= 0) { // Disables sprint upon stamina depletion
-                while (stamina <= 50) {
-                    currentSpeed = walkSpeed;
-                    isSprinting = false;
+                    if (stamina <= 50 && Input.GetKeyDown(KeyCode.LeftShift)) {
+                        isSprinting = false;
+                        currentSpeed = walkSpeed;
+                    }
                 }
-            }
-
-*/
-
+        
         } else isSprinting = false;
 
         if (stamina < 100 && isSprinting == false) stamina += 0.5f; // Normal stamina regen
