@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     // Speed
-    public float walkSpeed = 0.1f;
-    public float sprintSpeed = 0.2f;
+    private float walkSpeed = 0.1f;
+    private float sprintSpeed = 0.2f;
+    public bool canSprint = true;
     
     // Private fields
     private Vector2 movement, newPosition;
@@ -39,6 +40,10 @@ public class PlayerController : MonoBehaviour
 
         // (FOR DEBUGGING)
         Debug.Log("Stamina is at: " + stamina);
+        
+        // Disables sprint upon stamina depletion
+        if (stamina >= 50 && Input.GetKeyDown(KeyCode.LeftShift)) canSprint = true;
+        if (stamina <= 1) canSprint = false;
     }
 
     void FixedUpdate()
@@ -47,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             // Sprint function
-            if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f)
+            if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f && canSprint)
             {
                 currentSpeed = sprintSpeed; 
                 stamina -= 0.5f; // Stamina depletion during sprint
@@ -57,16 +62,10 @@ public class PlayerController : MonoBehaviour
                 isSprinting = false;    
             }   
 
-            if (stamina <= 0) { // Disables sprint upon stamina depletion
-                    if (stamina <= 50 && Input.GetKeyDown(KeyCode.LeftShift)) {
-                        isSprinting = false;
-                        currentSpeed = walkSpeed;
-                    }
-                }
-        
+            
         } else isSprinting = false;
 
-        if (stamina < 100 && isSprinting == false) stamina += 0.5f; // Normal stamina regen
+        if (stamina < 100 && isSprinting == false) stamina += 0.3f; // Normal stamina regen
 
         // Movement script
         if (canMove && !isDead)
