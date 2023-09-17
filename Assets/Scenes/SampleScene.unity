@@ -968,7 +968,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1551864800}
   options: {fileID: 4292379228897787126}
-  Inventory: {fileID: 1117567224}
+  death: {fileID: 78129593}
+  KeyItemsButton: {fileID: 1117567224}
+  RespawnButton: {fileID: 545687102}
   OptionsButton: {fileID: 1425225963}
   MainMenuButton: {fileID: 1177119563}
   QuitButton: {fileID: 328268945}
@@ -2639,6 +2641,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2924996535217554036}
+    - target: {fileID: 4832861939507969796, guid: f0bfbf3425bc0414993e8e6799e049bf, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 2369354810286416953}
     - target: {fileID: 6780441454706605491, guid: f0bfbf3425bc0414993e8e6799e049bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 600
@@ -4892,6 +4898,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 5359449852842513484, guid: b77a70e7e9b8dee44804e635f650a713, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359449852842513484, guid: b77a70e7e9b8dee44804e635f650a713, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6208,6 +6222,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2476464073880274127, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2476464073880274127, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
