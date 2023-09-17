@@ -109,8 +109,11 @@ public class PlayerController : MonoBehaviour
         }
 
         // Sets animator parameters
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-        animator.SetBool("Sprint", isSprinting);
+        if (canMove && !isDead)
+        {
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+            animator.SetBool("Sprint", isSprinting);
+        }
 
         // TEMPORARY SANITY DEPLETION - FOR TESTING PURPOSES
         if (Input.GetKey(KeyCode.Q) && sanity >= 0f)

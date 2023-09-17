@@ -14,6 +14,10 @@ public class StaminaBar : MonoBehaviour
     public float currentValue = 0;
     private bool canSprint;
 
+    private void Start()
+    {
+        targetOpacity = 0;
+    }
     // Update is called once per frame
     void Update()
     {

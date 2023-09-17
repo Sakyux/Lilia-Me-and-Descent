@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
     public GameObject menu, options;
+    public Death death;
     private bool toggle;
-    public Button Inventory, OptionsButton, MainMenuButton, QuitButton, OptionsStartButton;
+    public Button KeyItemsButton, RespawnButton, OptionsButton, MainMenuButton, QuitButton, OptionsStartButton;
     public PlayerController playerController;
     private void Start()
     {
         menu.SetActive(false);
+        RespawnButton.onClick.AddListener(death.respawn);
         OptionsButton.onClick.AddListener(OptionsMenu);
         MainMenuButton.onClick.AddListener(MainMenu);
         QuitButton.onClick.AddListener(Exit);
@@ -23,7 +25,7 @@ public class Menu : MonoBehaviour
         {
             toggle = !toggle;
             menu.SetActive(toggle);
-            Inventory.Select();
+            KeyItemsButton.Select();
         }
         if (toggle) playerController.canMove = false;
         else playerController.canMove = true;
