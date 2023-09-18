@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         movement.Normalize();
 
         // (FOR DEBUGGING)
-        Debug.Log("Stamina is at: " + stamina);
+        // Debug.Log("Stamina is at: " + stamina);
         
         // Disables sprint upon stamina depletion
         if (stamina >= 50 && Input.GetKeyDown(KeyCode.LeftShift)) canSprint = true;
