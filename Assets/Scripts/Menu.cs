@@ -25,19 +25,24 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            toggle = !toggle;
-            menu.SetActive(toggle);
-            KeyItemsButton.Select();
+            ToggleMenu();
         }
         if (toggle) playerController.canMove = false;
         else playerController.canMove = true;
 
         if (Input.GetKeyDown(KeyCode.X)) options.SetActive(false);
     }
+    public void ToggleMenu()
+    {
+            toggle = !toggle;
+            menu.SetActive(toggle);
+            KeyItemsButton.Select();
+    }
     public void KeyItems()
     {
         inventory.SetActive(true);
         InventoryStartButton.Select();
+        menu.SetActive(false);
     }
     public void OptionsMenu()
     {
