@@ -6,14 +6,16 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject menu, options;
+    public GameObject menu, options, inventory;
     public Death death;
     private bool toggle;
-    public Button KeyItemsButton, RespawnButton, OptionsButton, MainMenuButton, QuitButton, OptionsStartButton;
+    public Button KeyItemsButton, RespawnButton, OptionsButton, MainMenuButton, QuitButton, OptionsStartButton, InventoryStartButton;
     public PlayerController playerController;
     private void Start()
     {
+        inventory.SetActive(false);
         menu.SetActive(false);
+        KeyItemsButton.onClick.AddListener(KeyItems);
         RespawnButton.onClick.AddListener(death.respawn);
         OptionsButton.onClick.AddListener(OptionsMenu);
         MainMenuButton.onClick.AddListener(MainMenu);
@@ -32,7 +34,11 @@ public class Menu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X)) options.SetActive(false);
     }
-
+    public void KeyItems()
+    {
+        inventory.SetActive(true);
+        InventoryStartButton.Select();
+    }
     public void OptionsMenu()
     {
         options.SetActive(true);
