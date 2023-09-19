@@ -24,6 +24,7 @@ public class KeyItems : MonoBehaviour
     public GameObject KeyItemsMenu, MenuPanel;
     public Menu menu;
     public Button menuStartButton;
+    
     void Start()
     {
     slotsList[0].slot.Select();
@@ -34,7 +35,7 @@ public class KeyItems : MonoBehaviour
         }
     }
     private void Update()
-    {
+    { 
         if (Input.GetKeyDown(KeyCode.X))
         {
             MenuPanel.SetActive(true);
@@ -44,18 +45,19 @@ public class KeyItems : MonoBehaviour
     }
     void SelectItem(int slotNum)
     {
-        heldItem = slotsList[slotNum].itemID;
-        slotsList[slotNum].itemID = 0;
-        slotsList[slotNum].slot.onClick.AddListener(DeselectItem);
-
-        menu.ToggleMenu();
-        KeyItemsMenu.SetActive(false);
-
-    }
-    void DeselectItem()
-    {
-        AddItem(heldItem);
-        heldItem = 0;
+        if (heldItem != slotsList[slotNum].itemID)
+        {
+            heldItem = slotsList[slotNum].itemID;
+            menu.ToggleMenu();
+            KeyItemsMenu.SetActive(false);
+            Debug.Log("item selected");
+        }
+        else
+        {
+            heldItem = 0;
+            Debug.Log("item deselected");
+        }
+        
     }
     public void AddItem(int addedItemID)
     {
@@ -68,6 +70,18 @@ public class KeyItems : MonoBehaviour
                 slotsList[i].slotSprite.sprite = spriteList[slotsList[i].itemID].itemSprite;
                 itemPlaced = true;
             }
+        }
+    }
+    public void UseItem(int usedItemID) // clears all items in inventory sharing the id of the used item. this means each item can only occur once.
+    {
+        for (int i = 0; i <= 7; i++)
+        {
+            if (slotsList[i].itemID == usedItemID)
+            {
+                slotsList[i].itemID = 0;
+                slotsList[i].slotSprite.sprite = spriteList[0].itemSprite;
+            }
+            heldItem = 0;
         }
     }
 }
