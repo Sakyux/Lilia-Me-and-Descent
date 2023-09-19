@@ -24,11 +24,18 @@ public class Items : MonoBehaviour
             keyItems.AddItem(ItemID);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other) // detects when respawn point is triggered 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.CompareTag("Player"))
         {
             playerNear = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNear = false;
         }
     }
 }

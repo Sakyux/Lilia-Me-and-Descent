@@ -44,19 +44,18 @@ public class KeyItems : MonoBehaviour
     }
     void SelectItem(int slotNum)
     {
-        //for (int i = 0; i <= 7; i++) slotsList[i].slot.onClick.AddListener(() => SelectItem(buttonIndex));
-        
         heldItem = slotsList[slotNum].itemID;
-        slotsList[slotNum].slot.onClick.AddListener(Deselect);
+        slotsList[slotNum].itemID = 0;
+        slotsList[slotNum].slot.onClick.AddListener(DeselectItem);
 
         menu.ToggleMenu();
         KeyItemsMenu.SetActive(false);
 
     }
-    void Deselect()
+    void DeselectItem()
     {
+        AddItem(heldItem);
         heldItem = 0;
-        
     }
     public void AddItem(int addedItemID)
     {
