@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     // Animation
     public Animator animator;
 
+    // saving
+    public static PlayerController Instance;
+
     void Start()
     {
         currentSpeed = walkSpeed;
@@ -127,5 +130,17 @@ public class PlayerController : MonoBehaviour
 
         // Checks Death
         if (sanity <= 0) isDead = true;
+    }
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

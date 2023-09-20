@@ -16,6 +16,7 @@ public class SpriteManager
 {
     public Sprite itemSprite;
 }
+[System.Serializable]
 public class KeyItems : MonoBehaviour
 {
     public List<SlotManager> slotsList = new List<SlotManager>();
@@ -24,8 +25,9 @@ public class KeyItems : MonoBehaviour
     public GameObject KeyItemsMenu, MenuPanel;
     public Menu menu;
     public Button menuStartButton;
-    
-    
+    public static KeyItems Instance;
+
+
     void Start()
     {
     slotsList[0].slot.Select();
@@ -83,6 +85,18 @@ public class KeyItems : MonoBehaviour
                 slotsList[i].slotSprite.sprite = spriteList[0].itemSprite;
             }
             heldItem = 0;
+        }
+    }
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

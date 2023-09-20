@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+[System.Serializable]
 public class LockedDoor : MonoBehaviour
 {
     public Collider2D Collider2D;
@@ -11,8 +11,9 @@ public class LockedDoor : MonoBehaviour
     public SpriteRenderer Door;
     public int requiredKeyID;
     private bool playerNear;
-    private bool open = false;
-    
+    public bool open = false;
+    public static LockedDoor Instance;
+
     // Use this for initialization
     void Start()
     {
@@ -49,6 +50,18 @@ public class LockedDoor : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = false;
+        }
+    }
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

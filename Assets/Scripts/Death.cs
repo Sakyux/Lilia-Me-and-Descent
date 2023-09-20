@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+[System.Serializable]
 public class Death : MonoBehaviour
 {
     public GameObject deathScreen;
     public GameObject player;
     public Vector3 respawnPosition;
     public PlayerController playerController;
+    public static Death Instance;
+    public SaveData saveData;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,19 @@ public class Death : MonoBehaviour
         playerController.isDead = false;
         deathScreen.SetActive(false);
         playerController.sanity = 100;
-        player.transform.position = respawnPosition;
+        saveData.LoadGameData();
+        player.transform.position = saveData.loadedPosition;
     }
 
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }
