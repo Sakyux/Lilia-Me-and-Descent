@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
@@ -19,6 +17,7 @@ public class Checkpoint : MonoBehaviour
         {
             respawnPosition = CheckPoint.transform.position;
             Death.respawnPosition = respawnPosition;
+            
 
         }
     }

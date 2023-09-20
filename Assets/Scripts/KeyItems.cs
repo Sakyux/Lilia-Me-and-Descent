@@ -25,6 +25,7 @@ public class KeyItems : MonoBehaviour
     public Menu menu;
     public Button menuStartButton;
     
+    
     void Start()
     {
     slotsList[0].slot.Select();
