@@ -11,9 +11,12 @@ public class SaveData : MonoBehaviour
     public KeyItems keyItems;
     public void SaveGameData()
     {
-        Debug.Log(Death.Instance.respawnPosition.x + " " + Death.Instance.respawnPosition.y + " " + Death.Instance.respawnPosition.z);
-        Debug.Log(LockedDoor.Instance.open);
-        for(int i = 0; i <= 7; i++) Debug.Log(KeyItems.Instance.slotsList[i].itemID);
+        //Debug.Log(Death.Instance.respawnPosition.x + " " + Death.Instance.respawnPosition.y + " " + Death.Instance.respawnPosition.z);
+        //Debug.Log(LockedDoor.Instance.open);
+        //for(int i = 0; i <= 7; i++) 
+        //    Debug.Log(KeyItems.Instance.slotsList[i].itemID);
+
+        PlayerPrefs.SetInt("testValue", 5);
         
 
         PlayerPrefs.SetFloat("PlayerPositionX", Death.Instance.respawnPosition.x);
@@ -22,12 +25,12 @@ public class SaveData : MonoBehaviour
 
         PlayerPrefs.SetInt("open", LockedDoor.Instance.open ? 1 : 0);
 
-        PlayerPrefs.SetInt("slotsList", KeyItems.Instance.slotsList[1].itemID);
+        for (int i = 0; i <= 7; i++)
+        PlayerPrefs.SetInt("slotsList_" + i, KeyItems.Instance.slotsList[i].itemID);
 
         PlayerPrefs.Save();
         Debug.Log("Game saved");
-        Debug.Log(PlayerPrefs.GetInt("slotsList"));
-        
+
     }
 
     public void LoadGameData()
@@ -39,15 +42,10 @@ public class SaveData : MonoBehaviour
 
         lockedDoor.open = PlayerPrefs.GetInt("open") == 1;
 
-        //int inventoryJson = PlayerPrefs.GetInt("slotsList");
-        //List<SlotManager> loadedKeyItems = List<SlotManager>(inventoryJson);
+        // Debug.Log(PlayerPrefs.GetFloat("PlayerPositionX") + " " + PlayerPrefs.GetFloat("PlayerPositionY") + " " + PlayerPrefs.GetFloat("PlayerPositionZ"));
 
-        keyItems.slotsList[1].itemID = PlayerPrefs.GetInt("slotsList");
+        for (int i = 0; i <= 7; i++) keyItems.slotsList[i].itemID = PlayerPrefs.GetInt("slotsList_" + i);
         
-        Debug.Log(PlayerPrefs.GetFloat("PlayerPositionX") + " " + PlayerPrefs.GetFloat("PlayerPositionY") + " " + PlayerPrefs.GetFloat("PlayerPositionZ"));
-        Debug.Log(PlayerPrefs.GetInt("open") == 1);
-        Debug.Log(PlayerPrefs.GetInt("slotsList"));
-        
-        Debug.Log("GameLoaded");
+        Debug.Log("Game Loaded");
     }
 }

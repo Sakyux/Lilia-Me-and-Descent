@@ -11,7 +11,7 @@ public class LockedDoor : MonoBehaviour
     public SpriteRenderer Door;
     public int requiredKeyID;
     private bool playerNear;
-    public bool open = false;
+    public bool open = false, compare = false;
     public static LockedDoor Instance;
 
     // Use this for initialization
@@ -28,9 +28,13 @@ public class LockedDoor : MonoBehaviour
             if (keyItems.heldItem == requiredKeyID && !open) open = true;
             else if (keyItems.heldItem != 0 && !open) Debug.Log("incorrect item");
         }
-
-        if (open) UnlockDoor();
-        else LockDoor();
+        if (open != compare)
+        {
+            if (open) UnlockDoor();
+            else LockDoor();
+            compare = open;
+        }
+        
     }
 
     private void UnlockDoor()

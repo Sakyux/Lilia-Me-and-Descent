@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +9,7 @@ public class Menu : MonoBehaviour
     private bool toggle;
     public Button KeyItemsButton, RespawnButton, OptionsButton, MainMenuButton, QuitButton, OptionsStartButton, InventoryStartButton;
     public PlayerController playerController;
+    public KeyItems keyItems;
     private void Start()
     {
         inventory.SetActive(false);
@@ -40,6 +39,7 @@ public class Menu : MonoBehaviour
     }
     public void KeyItems()
     {
+        keyItems.ReloadKeyItems();
         inventory.SetActive(true);
         InventoryStartButton.Select();
         menu.SetActive(false);

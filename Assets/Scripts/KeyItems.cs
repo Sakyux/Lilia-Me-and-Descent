@@ -28,7 +28,8 @@ public class KeyItems : MonoBehaviour
 
     void Start()
     {
-    slotsList[0].slot.Select();
+
+        slotsList[0].slot.Select();
         for (int i = 0; i <= 7; i++)
         {
             int buttonIndex = i;
@@ -67,11 +68,13 @@ public class KeyItems : MonoBehaviour
         {
             if (!itemPlaced && slotsList[i].itemID == 0)
             {
+                if (i == 1) Debug.Log(addedItemID);
                 slotsList[i].itemID = addedItemID;
-                slotsList[i].slotSprite.sprite = spriteList[slotsList[i].itemID].itemSprite;
                 itemPlaced = true;
             }
         }
+
+        ReloadKeyItems();
     }
     public void UseItem(int usedItemID) // clears all items in inventory sharing the id of the used item. this means each item can only occur once.
     {
@@ -79,10 +82,18 @@ public class KeyItems : MonoBehaviour
         {
             if (slotsList[i].itemID == usedItemID)
             {
-                slotsList[i].itemID = 0;
+                slotsList[i].itemID = 0; // *
                 slotsList[i].slotSprite.sprite = spriteList[0].itemSprite;
             }
             heldItem = 0;
+        }
+    }
+
+    public void ReloadKeyItems()
+    {
+        for (int i = 0; i <= 7; i++)
+        {
+            slotsList[i].slotSprite.sprite = spriteList[slotsList[i].itemID].itemSprite;
         }
     }
 

@@ -29,6 +29,7 @@ public class Items : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = true;
+            Debug.Log("Trigger Enter");
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -36,6 +37,7 @@ public class Items : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = false;
+            Debug.Log("Trigger Exit");
         }
     }
 }
