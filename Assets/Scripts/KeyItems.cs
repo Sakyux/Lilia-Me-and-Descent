@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +24,7 @@ public class KeyItems : MonoBehaviour
     public Menu menu;
     public Button menuStartButton;
     public static KeyItems Instance;
-
+    
 
     void Start()
     {

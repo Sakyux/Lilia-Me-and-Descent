@@ -7,7 +7,7 @@ public class LockedDoor : MonoBehaviour
 {
     public Collider2D Collider2D;
     public KeyItems keyItems;
-    public Sprite unlockedSprite;
+    public Sprite unlockedSprite, lockedSprite;
     public SpriteRenderer Door;
     public int requiredKeyID;
     private bool playerNear;
@@ -25,9 +25,12 @@ public class LockedDoor : MonoBehaviour
     {
         if (playerNear && Input.GetKeyDown(KeyCode.Z))
         {
-            if (keyItems.heldItem == requiredKeyID && !open) UnlockDoor();
+            if (keyItems.heldItem == requiredKeyID && !open) open = true;
             else if (keyItems.heldItem != 0 && !open) Debug.Log("incorrect item");
         }
+
+        if (open) UnlockDoor();
+        else LockDoor();
     }
 
     private void UnlockDoor()
@@ -35,7 +38,12 @@ public class LockedDoor : MonoBehaviour
         Collider2D.isTrigger = true;
         Door.sprite = unlockedSprite;
         keyItems.UseItem(keyItems.heldItem);
-        open = true;
+    }
+
+    private void LockDoor()
+    {
+        Collider2D.isTrigger = false;
+        Door.sprite = lockedSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
