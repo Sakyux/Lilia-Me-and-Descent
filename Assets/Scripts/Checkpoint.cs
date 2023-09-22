@@ -1,13 +1,20 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Checkpoint : MonoBehaviour
 {
     // public Vector3 respawnPosition;
-    public Death Death;
     public SaveData saveData;
     public GameObject CheckPoint;
     private bool savedHere = false;
+    public static Checkpoint Instance;
+    public Vector3 respawnPosition;
+    public GameObject player;
 
+    private void Start()
+    {
+        respawnPosition = player.transform.position;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -18,9 +25,20 @@ public class Checkpoint : MonoBehaviour
         if (other.CompareTag("Player") && !savedHere)
         {
             savedHere = true;
-            Death.respawnPosition = CheckPoint.transform.position;
+            respawnPosition = CheckPoint.transform.position;
             saveData.SaveGameData();
         }
     }
 
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }

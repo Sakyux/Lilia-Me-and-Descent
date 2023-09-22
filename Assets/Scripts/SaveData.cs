@@ -6,9 +6,14 @@ using System.Linq;
 [System.Serializable]
 public class SaveData : MonoBehaviour
 {
-    public Vector3 loadedPosition;
     public LockedDoor lockedDoor;
     public KeyItems keyItems;
+    public GameObject player;
+
+    private void Start()
+    {
+        SaveGameData();
+    }
     public void SaveGameData()
     {
         //Debug.Log(Death.Instance.respawnPosition.x + " " + Death.Instance.respawnPosition.y + " " + Death.Instance.respawnPosition.z);
@@ -17,11 +22,10 @@ public class SaveData : MonoBehaviour
         //    Debug.Log(KeyItems.Instance.slotsList[i].itemID);
 
         PlayerPrefs.SetInt("testValue", 5);
-        
 
-        PlayerPrefs.SetFloat("PlayerPositionX", Death.Instance.respawnPosition.x);
-        PlayerPrefs.SetFloat("PlayerPositionY", Death.Instance.respawnPosition.y);
-        PlayerPrefs.SetFloat("PlayerPositionZ", Death.Instance.respawnPosition.z);
+        PlayerPrefs.SetFloat("PlayerPositionX", Checkpoint.Instance.respawnPosition.x);
+        PlayerPrefs.SetFloat("PlayerPositionY", Checkpoint.Instance.respawnPosition.y);
+        PlayerPrefs.SetFloat("PlayerPositionZ", Checkpoint.Instance.respawnPosition.z);
 
         PlayerPrefs.SetInt("open", LockedDoor.Instance.open ? 1 : 0);
 
@@ -32,17 +36,14 @@ public class SaveData : MonoBehaviour
         Debug.Log("Game saved");
 
     }
-
     public void LoadGameData()
     {
         float posX = PlayerPrefs.GetFloat("PlayerPositionX");
         float posY = PlayerPrefs.GetFloat("PlayerPositionY");
         float posZ = PlayerPrefs.GetFloat("PlayerPositionZ");
-        Vector3 loadedPosition = new Vector3(posX, posY, posZ);
+        player.transform.position = new Vector3(posX, posY, posZ);
 
         lockedDoor.open = PlayerPrefs.GetInt("open") == 1;
-
-        // Debug.Log(PlayerPrefs.GetFloat("PlayerPositionX") + " " + PlayerPrefs.GetFloat("PlayerPositionY") + " " + PlayerPrefs.GetFloat("PlayerPositionZ"));
 
         for (int i = 0; i <= 7; i++) keyItems.slotsList[i].itemID = PlayerPrefs.GetInt("slotsList_" + i);
         

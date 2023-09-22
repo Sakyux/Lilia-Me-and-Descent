@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class Death : MonoBehaviour
 {
     public GameObject deathScreen;
-    public GameObject player;
-    public Vector3 respawnPosition;
     public PlayerController playerController;
     public static Death Instance;
     public SaveData saveData;
@@ -16,8 +14,6 @@ public class Death : MonoBehaviour
     void Start()
     {
         deathScreen.SetActive(false);
-        respawnPosition = player.transform.position;
-        
     }
 
     // Update is called once per frame
@@ -41,7 +37,6 @@ public class Death : MonoBehaviour
         deathScreen.SetActive(false);
         playerController.sanity = 100;
         saveData.LoadGameData();
-        player.transform.position = saveData.loadedPosition;
     }
 
     public void Awake()

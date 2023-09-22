@@ -1479,9 +1479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9174090fea302094180d24f9266451b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadedPosition: {x: 0, y: 0, z: 0}
   lockedDoor: {fileID: 1687334076}
   keyItems: {fileID: 1075736897}
+  player: {fileID: 2924996535217554036}
 --- !u!4 &554624284
 Transform:
   m_ObjectHideFlags: 0
@@ -9296,6 +9296,10 @@ PrefabInstance:
       propertyPath: Death
       value: 
       objectReference: {fileID: 78129593}
+    - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2924996535217554036}
     - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: saveData
       value: 
