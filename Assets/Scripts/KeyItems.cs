@@ -94,6 +94,8 @@ public class KeyItems : MonoBehaviour
         for (int i = 0; i <= 7; i++)
         {
             slotsList[i].slotSprite.sprite = spriteList[slotsList[i].itemID].itemSprite;
+            if (slotsList[i].itemID == 0) slotsList[i].slotSprite.color = new Color(1, 1, 1, 0);
+            else slotsList[i].slotSprite.color = new Color(1, 1, 1, 1);
         }
     }
 
