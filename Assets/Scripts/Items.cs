@@ -6,38 +6,35 @@ public class Items : MonoBehaviour
 {
     public GameObject item;
     public KeyItems keyItems;
-    public int ItemID;
-    private bool playerNear = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    public int ItemID, itemNum;
+    private bool playerNear = false, isActive = true;
+    public ItemManager itemManager;
     void Update()
     {
 
+        //if (isActive != check)
+        //{
+            
+        //}
+
         if (playerNear && Input.GetKeyDown(KeyCode.Z))
         {
+            itemManager.itemList[itemNum].isActive = isActive;
             item.SetActive(false);
             keyItems.AddItem(ItemID);
+            isActive = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("trigger");
             playerNear = true;
-            Debug.Log("Trigger Enter");
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerNear = false;
-            Debug.Log("Trigger Exit");
-        }
+         if (other.CompareTag("Player")) playerNear = false;
     }
 }

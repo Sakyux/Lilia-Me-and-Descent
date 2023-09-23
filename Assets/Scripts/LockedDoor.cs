@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 [System.Serializable]
 public class LockedDoor : MonoBehaviour
 {
@@ -13,12 +10,6 @@ public class LockedDoor : MonoBehaviour
     private bool playerNear;
     public bool open = false, compare = false;
     public static LockedDoor Instance;
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

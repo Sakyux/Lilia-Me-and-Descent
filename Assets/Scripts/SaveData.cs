@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class SaveData : MonoBehaviour
