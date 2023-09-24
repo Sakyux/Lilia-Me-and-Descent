@@ -10,5 +10,18 @@ public class ItemLister
 [System.Serializable]
 public class ItemManager : MonoBehaviour
 {
+    public static ItemManager Instance;
     public List<ItemLister> itemList = new List<ItemLister>();
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }

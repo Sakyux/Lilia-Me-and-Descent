@@ -19,10 +19,10 @@ public class Items : MonoBehaviour
 
         if (playerNear && Input.GetKeyDown(KeyCode.Z))
         {
+            isActive = false;
             itemManager.itemList[itemNum].isActive = isActive;
             item.SetActive(false);
             keyItems.AddItem(ItemID);
-            isActive = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D other) 
