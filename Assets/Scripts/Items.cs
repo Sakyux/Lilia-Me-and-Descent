@@ -7,21 +7,21 @@ public class Items : MonoBehaviour
     public GameObject item;
     public KeyItems keyItems;
     public int ItemID, itemNum;
-    private bool playerNear = false, isActive = true;
+    private bool playerNear = false, check = true;
     public ItemManager itemManager;
     void Update()
     {
-
-        //if (isActive != check)
-        //{
-            
-        //}
+        // WIP
+        if (itemManager.itemList[itemNum].isActive != check)
+        {
+            item.SetActive(itemManager.itemList[itemNum].isActive);
+            check = itemManager.itemList[itemNum].isActive;
+            Debug.Log("Changed Item State");
+        }
 
         if (playerNear && Input.GetKeyDown(KeyCode.Z))
         {
-            isActive = false;
-            itemManager.itemList[itemNum].isActive = isActive;
-            item.SetActive(false);
+            itemManager.itemList[itemNum].isActive = false;
             keyItems.AddItem(ItemID);
         }
     }
@@ -29,7 +29,6 @@ public class Items : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("trigger");
             playerNear = true;
         }
     }

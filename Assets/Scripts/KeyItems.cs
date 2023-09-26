@@ -52,12 +52,10 @@ public class KeyItems : MonoBehaviour
             heldItem = slotsList[slotNum].itemID;
             menu.ToggleMenu();
             KeyItemsMenu.SetActive(false);
-            Debug.Log("item selected");
         }
         else
         {
             heldItem = 0;
-            Debug.Log("item deselected");
         }
         
     }

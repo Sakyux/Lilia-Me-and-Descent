@@ -295,6 +295,7 @@ MonoBehaviour:
   lockedDoor: {fileID: 1687334076}
   keyItems: {fileID: 1075736897}
   player: {fileID: 2924996535217554036}
+  itemManager: {fileID: 980240985}
 --- !u!4 &554624284
 Transform:
   m_ObjectHideFlags: 0
