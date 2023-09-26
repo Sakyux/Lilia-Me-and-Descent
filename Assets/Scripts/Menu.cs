@@ -51,10 +51,12 @@ public class Menu : MonoBehaviour
     }
     public void MainMenu()
     {
+        SaveData.Instance.SaveGameData();
         SceneManager.LoadScene("MainMenu");
     }
     public void Exit()
     {
+        SaveData.Instance.SaveGameData();
         Application.Quit();
     }
 }

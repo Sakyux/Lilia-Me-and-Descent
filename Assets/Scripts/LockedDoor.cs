@@ -6,26 +6,36 @@ public class LockedDoor : MonoBehaviour
     public KeyItems keyItems;
     public Sprite unlockedSprite, lockedSprite;
     public SpriteRenderer Door;
-    public int requiredKeyID;
+    public int requiredKeyID, doorNum;
     private bool playerNear;
-    public bool open = false, compare = false;
-    public static LockedDoor Instance;
+    public bool open = false, compare = true;
+    public DoorManager doorManager;
 
     // Update is called once per frame
     void Update()
     {
-        if (playerNear && Input.GetKeyDown(KeyCode.Z))
+        if (doorManager.DoorList[doorNum - 1].isActive != compare)
         {
-            if (keyItems.heldItem == requiredKeyID && !open) open = true;
+            Collider2D.isTrigger = !doorManager.DoorList[doorNum - 1].isActive;
+            compare = doorManager.DoorList[doorNum - 1].isActive;
+            Debug.Log("Changed Door State");
+            if (doorManager.DoorList[doorNum - 1].isActive)
+            {
+                LockDoor();
+                open = false;
+            }
+        }
+
+        if (!open && playerNear && Input.GetKeyDown(KeyCode.Z))
+        {
+            if (keyItems.heldItem == requiredKeyID && !open)
+            {
+                doorManager.DoorList[doorNum - 1].isActive = false;
+                UnlockDoor();
+                open = true;
+            }
             else if (keyItems.heldItem != 0 && !open) Debug.Log("incorrect item");
         }
-        if (open != compare)
-        {
-            if (open) UnlockDoor();
-            else LockDoor();
-            compare = open;
-        }
-        
     }
 
     private void UnlockDoor()
@@ -56,15 +66,4 @@ public class LockedDoor : MonoBehaviour
         }
     }
 
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 }

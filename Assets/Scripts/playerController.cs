@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         // TEMPORARY SANITY DEPLETION - FOR TESTING PURPOSES
         if (Input.GetKey(KeyCode.Q) && sanity >= 0f)
         {
-            sanity -= 1f;
+            sanity -= 3f;
         }
         else if (sanity <= 100f)
         {
