@@ -12,15 +12,10 @@ public class Options : MonoBehaviour
     public TMP_Dropdown screenResolution;
     public GameObject optionsPanel;
     private bool isFullscreen = true;
-    public static float volumeLevel = 1;
-    public static int resolutionIndex = 1;
    
     void Start()
     {
-        ChangeResolution(resolutionIndex); // WIP
-        AudioListener.volume = volumeLevel;
-        volume.value = volumeLevel;
-
+        //optionsMenu.SetActive(false);
         optionsPanel.SetActive(false);
 
         if (volume != null && volume.IsActive())
@@ -46,7 +41,6 @@ public class Options : MonoBehaviour
     {
         AudioListener.volume = newVolume;
         Debug.Log(AudioListener.volume);
-        volumeLevel = AudioListener.volume;
     }
 
     private void ChangeResolution(int optionIndex)
@@ -62,8 +56,8 @@ public class Options : MonoBehaviour
             case 2: // 1366 x 768
                 Screen.SetResolution(1366, 768, Screen.fullScreen);
                 break;
+            
         }
-        resolutionIndex = optionIndex;
     }
 
     void Back()
