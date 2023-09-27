@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
     public string mainScene;
     void Start()
     {
+        SaveData.LoadOptionsData();
+
         newGameButton.Select();
 
         // button interactions
@@ -24,8 +26,8 @@ public class MainMenu : MonoBehaviour
     }
     void Continue()
     {
+        SaveData.load = true;
         SceneManager.LoadScene(mainScene);
-        SaveData.Instance = null;
     }
     void NewGame()
     {
