@@ -38,8 +38,7 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // Prevents additive speed
-        movement.Normalize();
+        
 
         // (FOR DEBUGGING)
         // Debug.Log("Stamina is at: " + stamina);
@@ -127,6 +126,9 @@ public class PlayerController : MonoBehaviour
         {
             sanity += 0.02f; // Sanity regeneration
         }
+
+        // Prevents additive speed
+        movement.Normalize();
 
         // Checks Death
         if (sanity <= 0) isDead = true;

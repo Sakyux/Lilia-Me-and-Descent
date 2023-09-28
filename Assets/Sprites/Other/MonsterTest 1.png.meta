@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a02a6887c1325b84f82193f8fc0d889b
+guid: bd9009bf90f65a64ab92ae77348705a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4144345155228687997
-    second: Lilia_Front_0
+      213: -163509416849811553
+    second: MonsterTest 1_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,31 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lilia_Front_0
+      name: MonsterTest 1_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 0
         y: 0
-        width: 38
-        height: 59
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 28.5}
-        - {x: -18, y: 18.5}
-        - {x: -19, y: -5.5}
-        - {x: -10, y: -24.5}
-        - {x: -7, y: -29.5}
-        - {x: 11, y: -29.5}
-        - {x: 19, y: -19.5}
-        - {x: 18, y: 19.5}
-        - {x: 8, y: 28.5}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: 381abfbf9045c76c0800000000000000
-      internalID: -4144345155228687997
+      spriteID: f975c3b3d091bbdf0800000000000000
+      internalID: -163509416849811553
       vertices: []
       indices: 
       edges: []
@@ -130,15 +121,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7dad97bb192431a4e8e96a84f91d4161
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Lilia_Front_0: -4144345155228687997
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
