@@ -36,6 +36,11 @@ public class Options : MonoBehaviour
         
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X)) Back();
+    }
+
     private void FullScreen()
     {
             isFullscreen = !isFullscreen;
