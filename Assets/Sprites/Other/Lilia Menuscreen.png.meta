@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lilia Menuscreen_0: -9139668984362190601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
