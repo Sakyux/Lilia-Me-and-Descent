@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     // Speed
-    private float walkSpeed = 0.1f;
-    private float sprintSpeed = 0.2f;
+    public float walkSpeed = 0.1f;
+    public float sprintSpeed = 0.2f;
     public bool canSprint = true;
     
     // Private fields
