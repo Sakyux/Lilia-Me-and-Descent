@@ -8,7 +8,7 @@ public class Checkpoint : MonoBehaviour
     public GameObject CheckPoint;
     private bool savedHere = false;
     public static Checkpoint Instance;
-    public Vector3 respawnPosition;
+    public static Vector3 respawnPosition;
     public GameObject player;
 
     private void Start()

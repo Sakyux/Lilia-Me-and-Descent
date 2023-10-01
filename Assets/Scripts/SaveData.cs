@@ -18,9 +18,9 @@ public class SaveData : MonoBehaviour
     public void SaveGameData()
     {
         // game
-        PlayerPrefs.SetFloat("PlayerPositionX", Checkpoint.Instance.respawnPosition.x);
-        PlayerPrefs.SetFloat("PlayerPositionY", Checkpoint.Instance.respawnPosition.y);
-        PlayerPrefs.SetFloat("PlayerPositionZ", Checkpoint.Instance.respawnPosition.z);
+        PlayerPrefs.SetFloat("PlayerPositionX", Checkpoint.respawnPosition.x);
+        PlayerPrefs.SetFloat("PlayerPositionY", Checkpoint.respawnPosition.y);
+        PlayerPrefs.SetFloat("PlayerPositionZ", Checkpoint.respawnPosition.z);
 
         for (int i = 0; i <= DoorManager.Instance.DoorList.Count - 1; i++)
             PlayerPrefs.SetInt("Door_" + i, DoorManager.Instance.DoorList[i].isActive ? 1 : 0);
