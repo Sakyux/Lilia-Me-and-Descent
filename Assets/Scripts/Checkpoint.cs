@@ -3,29 +3,24 @@ using UnityEngine;
 [System.Serializable]
 public class Checkpoint : MonoBehaviour
 {
-    // public Vector3 respawnPosition;
-    public SaveData saveData;
-    public GameObject CheckPoint;
     private bool savedHere = false;
+
+    public SaveData saveData;
+    public Transform CheckPoint, enemyRespawnPoint, player;
     public static Checkpoint Instance;
     public static Vector3 respawnPosition;
-    public GameObject player;
 
     private void Start()
     {
-        respawnPosition = player.transform.position;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        // respawnPosition = Death.respawnPosition;
+        respawnPosition = player.position;
     }
     private void OnTriggerEnter2D(Collider2D other) // detects when respawn point is triggered
     {
         if (other.CompareTag("Player") && !savedHere)
         {
             savedHere = true;
-            respawnPosition = CheckPoint.transform.position;
+            respawnPosition = CheckPoint.position;
+            EnemyManager.spawnPositon = enemyRespawnPoint.position;
             saveData.SaveGameData();
         }
     }

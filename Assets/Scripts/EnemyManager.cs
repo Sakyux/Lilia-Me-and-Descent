@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
     public AIDestinationSetter destinationSetter;
     public Transform player, playerLocator;
     public AIPath AIPath;
-    public static Vector2 spawnPositon = new Vector3(0, 0, 0);
+    public static Vector3 spawnPositon = new Vector3(0, 0, 0);
     void Update()
     {
         direction = player.position - transform.position;

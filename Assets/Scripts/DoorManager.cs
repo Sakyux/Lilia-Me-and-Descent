@@ -6,7 +6,7 @@ public class DoorLister
 {
     public bool isActive = true;
 }
-
+ 
 [System.Serializable]
 public class DoorManager : MonoBehaviour
 {

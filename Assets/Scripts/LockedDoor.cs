@@ -14,12 +14,12 @@ public class LockedDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (doorManager.DoorList[doorNum - 1].isActive != compare)
+        if (DoorManager.Instance.DoorList[doorNum - 1].isActive != compare)
         {
-            Collider2D.isTrigger = !doorManager.DoorList[doorNum - 1].isActive;
-            compare = doorManager.DoorList[doorNum - 1].isActive;
+            Collider2D.isTrigger = !DoorManager.Instance.DoorList[doorNum - 1].isActive;
+            compare = DoorManager.Instance.DoorList[doorNum - 1].isActive;
             Debug.Log("Changed Door State");
-            if (doorManager.DoorList[doorNum - 1].isActive)
+            if (DoorManager.Instance.DoorList[doorNum - 1].isActive)
             {
                 LockDoor();
                 open = false;
@@ -30,7 +30,7 @@ public class LockedDoor : MonoBehaviour
         {
             if (keyItems.heldItem == requiredKeyID && !open)
             {
-                doorManager.DoorList[doorNum - 1].isActive = false;
+                DoorManager.Instance.DoorList[doorNum - 1].isActive = false;
                 UnlockDoor();
                 open = true;
             }

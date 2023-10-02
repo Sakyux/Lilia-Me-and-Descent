@@ -419,6 +419,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!4 &235973341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2476464073880274127, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+  m_PrefabInstance: {fileID: 1028633868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &431116937 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3677652211216903359, guid: 64811d2ec0d2b3d4ea571abf3b5b931e, type: 3}
@@ -936,6 +941,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2561385461224333917, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561385461224333917, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561385461224333917, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647025704233278023, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647025704233278023, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647025704233278023, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: Death
       value: 
@@ -943,20 +972,37 @@ PrefabInstance:
     - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 2924996535217554036}
+      objectReference: {fileID: 2924996535217554041}
     - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: saveData
       value: 
       objectReference: {fileID: 554624283}
+    - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: CheckPoint
+      value: 
+      objectReference: {fileID: 235973341}
+    - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: enemyRespawnPoint
+      value: 
+      objectReference: {fileID: 1067947943}
     - target: {fileID: 7439151702162335518, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: m_Name
       value: RespawnPoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390157311090746632, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Name
+      value: EnemyRespawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+--- !u!4 &1067947943 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 572090265153704715, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+  m_PrefabInstance: {fileID: 1028633868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1075736897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 624671919165821138, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
@@ -1380,6 +1426,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 765907338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1744213128 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2476464073880274127, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+  m_PrefabInstance: {fileID: 8645509696580898382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1789872750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1499,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1888698523 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 572090265153704715, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+  m_PrefabInstance: {fileID: 8645509696580898382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &108694222779537665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2850,6 +2906,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4647025704233278023, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647025704233278023, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647025704233278023, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: Death
       value: 
@@ -2857,14 +2925,26 @@ PrefabInstance:
     - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 2924996535217554036}
+      objectReference: {fileID: 2924996535217554041}
     - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: saveData
       value: 
       objectReference: {fileID: 554624283}
+    - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: CheckPoint
+      value: 
+      objectReference: {fileID: 1744213128}
+    - target: {fileID: 6406133622202516788, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: enemyRespawnPoint
+      value: 
+      objectReference: {fileID: 1888698523}
     - target: {fileID: 7439151702162335518, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
       propertyPath: m_Name
       value: RespawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 8390157311090746632, guid: 7b8af021a0bcb934ab7a27b7fcfa16b5, type: 3}
+      propertyPath: m_Name
+      value: EnemyRespawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

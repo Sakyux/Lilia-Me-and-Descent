@@ -9,7 +9,7 @@ public class SaveData : MonoBehaviour
     public ItemManager itemManager;
     public static SaveData Instance;
     public static bool load;
-
+     
     private void Start()
     {
         if (load == true) LoadGameData();
@@ -52,7 +52,7 @@ public class SaveData : MonoBehaviour
         float posZ = PlayerPrefs.GetFloat("PlayerPositionZ");
         player.transform.position = new Vector3(posX, posY, posZ);
 
-        for (int i = 0; i <= DoorManager.Instance.DoorList.Count - 1; i++)
+        for (int i = 0; i <= doorManager.DoorList.Count - 1; i++)
             doorManager.DoorList[i].isActive = PlayerPrefs.GetInt("Door_" + i) == 1;
 
         for (int i = 0; i <= 7; i++) 
@@ -64,8 +64,6 @@ public class SaveData : MonoBehaviour
             itemManager.itemList[i].isActive = PlayerPrefs.GetInt("Item_" + i) == 1;
 
         Enemy.transform.position = EnemyManager.spawnPositon;
-        // options 
-        
 
         Debug.Log("Game Loaded");
     }
