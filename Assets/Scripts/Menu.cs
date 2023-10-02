@@ -26,7 +26,8 @@ public class Menu : MonoBehaviour
         {
             ToggleMenu();
         }
-        if (toggle) playerController.canMove = false;
+
+        if (menu.activeSelf || inventory.activeSelf || options.activeSelf) playerController.canMove = false;
         else playerController.canMove = true;
 
         if (Input.GetKeyDown(KeyCode.X)) options.SetActive(false);

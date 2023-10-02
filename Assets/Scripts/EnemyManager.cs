@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour
     public AIDestinationSetter destinationSetter;
     public Transform player, playerLocator;
     public AIPath AIPath;
+    public static Vector2 spawnPositon = new Vector3(0, 0, 0);
     void Update()
     {
         direction = player.position - transform.position;
@@ -22,6 +23,9 @@ public class EnemyManager : MonoBehaviour
         {
             Wander();
         }
+
+        // Button is a placeholder for anything that might alert the monster of the players position.
+        if (Input.GetKeyDown(KeyCode.E)) Detect();
     }
 
     private void CastRay(Vector2 direction)
@@ -40,9 +44,22 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    // Commented out for testing purposes, makes the enemy kill the player on contact
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Death.Instance.Kill();
+    //    }
+    //}
     void Wander()
     {
         playerLocator.position = new Vector3((float)Random.Range(-10, 10), (float)Random.Range(-10, 10), 10f);
         AIPath.maxSpeed = 2;
+    }
+
+    void Detect()
+    {
+        playerLocator.position = player.position;
     }
 }

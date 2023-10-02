@@ -5,7 +5,7 @@ public class SaveData : MonoBehaviour
 {
     public DoorManager doorManager;
     public KeyItems keyItems;
-    public GameObject player;
+    public GameObject player, Enemy;
     public ItemManager itemManager;
     public static SaveData Instance;
     public static bool load;
@@ -58,9 +58,12 @@ public class SaveData : MonoBehaviour
         for (int i = 0; i <= 7; i++) 
             keyItems.slotsList[i].itemID = PlayerPrefs.GetInt("slotsList_" + i);
 
+        keyItems.heldItem = 0;
+
         for (int i = 0; i <= ItemManager.Instance.itemList.Count - 1; i++)
             itemManager.itemList[i].isActive = PlayerPrefs.GetInt("Item_" + i) == 1;
 
+        Enemy.transform.position = EnemyManager.spawnPositon;
         // options 
         
 

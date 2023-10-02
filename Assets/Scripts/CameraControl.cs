@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public GameObject player;
+    public Camera cameraSize;
+    private bool debugMode;
 
     void Start()
     {
@@ -19,5 +21,12 @@ public class CameraControl : MonoBehaviour
 
         // Changes position of the camera based off of Lilia
         gameObject.transform.position = new Vector3(x, y, gameObject.transform.position.z);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            debugMode = !debugMode;
+            if (debugMode) cameraSize.orthographicSize = 10;
+            else cameraSize.orthographicSize = 4;
+        }
     }
 }
