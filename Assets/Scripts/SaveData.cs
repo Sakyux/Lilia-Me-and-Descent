@@ -12,6 +12,12 @@ public class SaveData : MonoBehaviour
      
     private void Start()
     {
+        doorManager = GameObject.FindGameObjectWithTag("DoorManager").GetComponent<DoorManager>();
+        keyItems = GameObject.FindGameObjectWithTag("KeyItems").GetComponent<KeyItems>();
+        itemManager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        Enemy = GameObject.FindGameObjectWithTag("Descent");
+
         if (load == true) LoadGameData();
         SaveGameData();
     }
@@ -75,4 +81,4 @@ public class SaveData : MonoBehaviour
             Instance = this;
         }
     }
-    }
+}
