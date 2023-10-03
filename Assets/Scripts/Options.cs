@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
@@ -14,10 +13,13 @@ public class Options : MonoBehaviour
     private bool isFullscreen = true;
     public static float volumeLevel = 1;
     public static int resolutionIndex = 1;
-   
+    public Toggle toggleFullscreen;
+    public TMP_Text volumeText;
+
+
     void Start()
     {
-        ChangeResolution(resolutionIndex); // WIP
+        ChangeResolution(resolutionIndex);
         AudioListener.volume = volumeLevel;
         volume.value = volumeLevel;
 
@@ -31,9 +33,9 @@ public class Options : MonoBehaviour
 
         fullScreen.onClick.AddListener(FullScreen);
         volume.onValueChanged.AddListener(ChangeVolume);
-        screenResolution.onValueChanged.AddListener(ChangeResolution); 
+        screenResolution.onValueChanged.AddListener(ChangeResolution);
         back.onClick.AddListener(Back);
-        
+
     }
 
     void Update()
@@ -43,8 +45,9 @@ public class Options : MonoBehaviour
 
     private void FullScreen()
     {
-            isFullscreen = !isFullscreen;
-            Screen.fullScreen = isFullscreen;
+        isFullscreen = !isFullscreen;
+        Screen.fullScreen = isFullscreen;
+        toggleFullscreen.isOn = !toggleFullscreen.isOn;
     }
 
     private void ChangeVolume(float newVolume)
@@ -52,6 +55,11 @@ public class Options : MonoBehaviour
         AudioListener.volume = newVolume;
         Debug.Log(AudioListener.volume);
         volumeLevel = AudioListener.volume;
+
+        if (EventSystem.current.currentSelectedGameObject == volume.gameObject)
+        {
+            volumeText.color = new Color32(157, 154, 195, 255);
+        }
     }
 
     private void ChangeResolution(int optionIndex)
