@@ -27,6 +27,7 @@ TagManager:
   - Descent
   - DescentGFX
   - PlayerLocator
+  - FadeIn
   layers:
   - Default
   - TransparentFX

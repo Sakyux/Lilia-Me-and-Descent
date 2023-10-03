@@ -16,7 +16,7 @@ public class HidePoint : MonoBehaviour
     void Start()
     {
         hideSpot = hidePoint.transform.position;
-        hidePrompt.SetActive(false);
+        Invoke("Disable", 0.01f);
     }
 
     // Update is called once per frame
@@ -78,5 +78,10 @@ public class HidePoint : MonoBehaviour
             rayHitIndex = rayIndex;
             playerNear = true;
         }
+    }
+
+    void Disable()
+    {
+        hidePrompt.SetActive(false);
     }
 }

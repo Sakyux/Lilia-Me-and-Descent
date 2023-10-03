@@ -9,10 +9,6 @@ public class MonsterController : MonoBehaviour
     public float speed;
 
     private float distance;
-    void Start()
-    {
-        
-    }
 
     void FixedUpdate()
     {

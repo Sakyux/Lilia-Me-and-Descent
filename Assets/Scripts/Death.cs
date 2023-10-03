@@ -13,7 +13,7 @@ public class Death : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deathScreen.SetActive(false);
+        Invoke("DisableDeathScreen", 0.01f);
     }
 
     // Update is called once per frame
@@ -49,5 +49,10 @@ public class Death : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void DisableDeathScreen()
+    {
+        deathScreen.SetActive(false);
     }
 }

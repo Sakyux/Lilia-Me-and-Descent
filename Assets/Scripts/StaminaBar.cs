@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.UI;
 public class StaminaBar : MonoBehaviour
 {
     public Image StaminaBarLeft, StaminaBarRight;
-    public float currentBarOpacity;
-    public float targetOpacity = 0f;
+    private float currentBarOpacity;
+    private float targetOpacity = 0f;
     public PlayerController playerController;
     public float stamina;
-    public RendererListDesc objectRenderer;
-    public float currentValue = 0;
+    //public RendererListDesc objectRenderer;
+    private float currentValue = 0;
     private bool canSprint;
 
     private void Start()
     {
+        StaminaBarLeft = GameObject.FindGameObjectWithTag("StaminaBarLeft").GetComponent<Image>();
+        StaminaBarRight = GameObject.FindGameObjectWithTag("StaminaBarRight").GetComponent<Image>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         targetOpacity = 0;
     }
     // Update is called once per frame

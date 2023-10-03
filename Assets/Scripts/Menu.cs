@@ -12,13 +12,12 @@ public class Menu : MonoBehaviour
     public KeyItems keyItems;
     private void Start()
     {
-        inventory.SetActive(false);
-        menu.SetActive(false);
         KeyItemsButton.onClick.AddListener(KeyItems);
         RespawnButton.onClick.AddListener(death.respawn);
         OptionsButton.onClick.AddListener(OptionsMenu);
         MainMenuButton.onClick.AddListener(MainMenu);
         QuitButton.onClick.AddListener(Exit);
+        Invoke("DisableMenu", 0.01f);
     }
     void Update()
     {
@@ -59,5 +58,11 @@ public class Menu : MonoBehaviour
     {
         SaveData.Instance.SaveGameData();
         Application.Quit();
+    }
+
+    void DisableMenu()
+    {
+        menu.SetActive(false);
+        inventory.SetActive(false);
     }
 }

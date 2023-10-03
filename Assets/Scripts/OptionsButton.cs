@@ -10,7 +10,7 @@ public class OptionsButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        OptionsPanel.SetActive(false);
+        Invoke("Disable", 0.01f);
         Options.onClick.AddListener(OptionsMenu);
     }
 
@@ -18,5 +18,9 @@ public class OptionsButton : MonoBehaviour
     void OptionsMenu()
     {
         OptionsPanel.SetActive(true);
+    }
+    void Disable()
+    {
+        OptionsPanel.SetActive(false);
     }
 }

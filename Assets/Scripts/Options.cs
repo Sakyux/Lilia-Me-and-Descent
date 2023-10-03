@@ -23,8 +23,6 @@ public class Options : MonoBehaviour
         AudioListener.volume = volumeLevel;
         volume.value = volumeLevel;
 
-        optionsPanel.SetActive(false);
-
         if (volume != null && volume.IsActive())
         {
             if (Input.GetKey(KeyCode.LeftArrow)) volume.value -= 0.5f;
@@ -36,6 +34,7 @@ public class Options : MonoBehaviour
         screenResolution.onValueChanged.AddListener(ChangeResolution);
         back.onClick.AddListener(Back);
 
+        Invoke("DisableOptions", 0.01f);
     }
 
     void Update()
@@ -83,5 +82,10 @@ public class Options : MonoBehaviour
     {
         optionsPanel.SetActive(false);
         newGame.Select();
+    }
+
+    void DisableOptions()
+    {
+        optionsPanel.SetActive(false);
     }
 }
