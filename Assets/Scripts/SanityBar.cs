@@ -10,10 +10,18 @@ public class SanityBar : MonoBehaviour
     public PlayerController playerController;
     public float sanity;
     // Update is called once per frame
+
+    private void Start()
+    {
+        sanityBar = GameObject.FindGameObjectWithTag("SanityBarInner").GetComponent<Image>();
+        sanityBarBackGround = GameObject.FindGameObjectWithTag("SanityBarBackground").GetComponent<Image>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
     void Update()
     {
+
         sanity = playerController.sanity;
-        sanityBar.fillAmount = (sanity / 100);
+        sanityBar.fillAmount = (1 - sanity / 100);
 
         if (playerController.isDead == true)
         {

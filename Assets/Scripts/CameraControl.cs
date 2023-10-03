@@ -11,6 +11,7 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); // Creates "Player" tag to reference to
+        cameraSize = GameObject.FindGameObjectWithTag("Camera").GetComponent<Camera>();
     }
 
     void Update()
@@ -26,7 +27,7 @@ public class CameraControl : MonoBehaviour
         {
             debugMode = !debugMode;
             if (debugMode) cameraSize.orthographicSize = 10;
-            else cameraSize.orthographicSize = 4;
+            else cameraSize.orthographicSize = 5;
         }
     }
 }

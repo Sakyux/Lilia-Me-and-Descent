@@ -5,6 +5,28 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Camera
+  - SanityBar
+  - SanityBarBackground
+  - SanityBarInner
+  - StaminaBarLeft
+  - StaminaBarRight
+  - DeathScreen
+  - SaveGame
+  - RespawnPoint
+  - EnemyRespawnPoint
+  - DoorManager
+  - LockedDoor
+  - HidePoint
+  - HidePointPrompt
+  - ItemManager
+  - Item
+  - Menu
+  - KeyItems
+  - Slot
+  - Descent
+  - DescentGFX
+  - PlayerLocator
   layers:
   - Default
   - TransparentFX
