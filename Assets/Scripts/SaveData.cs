@@ -3,21 +3,21 @@
 [System.Serializable]
 public class SaveData : MonoBehaviour
 {
-    public DoorManager doorManager;
     public KeyItems keyItems;
+    public DoorManager doorManager;
     public GameObject player, Enemy;
     public ItemManager itemManager;
     public static SaveData Instance;
     public static bool load;
      
-    private void Start()
+    public void Start()
     {
-        doorManager = GameObject.FindGameObjectWithTag("DoorManager").GetComponent<DoorManager>();
-        keyItems = GameObject.FindGameObjectWithTag("KeyItems").GetComponent<KeyItems>();
-        itemManager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         Enemy = GameObject.FindGameObjectWithTag("Descent");
-
+        doorManager = GameObject.FindGameObjectWithTag("DoorManager").GetComponent<DoorManager>();
+        itemManager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
+        keyItems = GameObject.FindWithTag("KeyItems").GetComponent<KeyItems>();
+        
         if (load == true) LoadGameData();
         SaveGameData();
     }
@@ -74,11 +74,11 @@ public class SaveData : MonoBehaviour
         Debug.Log("Game Loaded");
     }
 
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
+    //public void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //    }
+    //}
 }

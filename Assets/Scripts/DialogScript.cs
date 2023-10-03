@@ -8,13 +8,7 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
-        panel.SetActive(false);
-    }
-
-
-    void Update()
-    {
-
+        Invoke("Disable", 0.01f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,5 +38,10 @@ public class Dialogue : MonoBehaviour
         }
     }
     */
+
+    void Disable()
+    {
+        panel.SetActive(false);
+    }
 }
 
