@@ -12,6 +12,21 @@ public class Menu : MonoBehaviour
     public KeyItems keyItems;
     private void Start()
     {
+        menu = GameObject.FindGameObjectWithTag("Menu");
+        options = GameObject.FindGameObjectWithTag("GameOptions");
+        inventory = GameObject.FindGameObjectWithTag("KeyItems");
+
+        death = GameObject.FindGameObjectWithTag("DeathScreenManager").GetComponent<Death>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        keyItems = GameObject.FindGameObjectWithTag("KeyItems").GetComponent<KeyItems>();
+        KeyItemsButton = GameObject.FindGameObjectWithTag("KeyItemsButton").GetComponent<Button>();
+        RespawnButton = GameObject.FindGameObjectWithTag("RespawnButton").GetComponent<Button>();
+        OptionsButton = GameObject.FindGameObjectWithTag("GameOptionsButton").GetComponent<Button>();
+        MainMenuButton = GameObject.FindGameObjectWithTag("MainMenuButton").GetComponent<Button>();
+        QuitButton = GameObject.FindGameObjectWithTag("QuitGameButton").GetComponent<Button>();
+        OptionsStartButton = GameObject.FindGameObjectWithTag("FullScreenButton").GetComponent<Button>();
+        InventoryStartButton = GameObject.FindGameObjectWithTag("Slot").GetComponent<Button>();
+
         KeyItemsButton.onClick.AddListener(KeyItems);
         RespawnButton.onClick.AddListener(death.respawn);
         OptionsButton.onClick.AddListener(OptionsMenu);

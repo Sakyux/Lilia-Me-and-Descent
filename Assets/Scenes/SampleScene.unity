@@ -1457,8 +1457,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 796744960592912444, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 796744960592912444, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
       propertyPath: m_TagString
       value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266955174150692371, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3010504774153976460, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
       propertyPath: keyItems
@@ -1468,13 +1476,29 @@ PrefabInstance:
       propertyPath: keyItems
       value: 
       objectReference: {fileID: 1075736897}
+    - target: {fileID: 5384869232971077791, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141549857791860125, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7141549857791860125, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
       propertyPath: m_TagString
       value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 8001467483618752057, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001467483618752057, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
       propertyPath: m_TagString
       value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359719803594431946, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9113863895849088417, guid: 85a2d7a3384dd6a42859311e1633cfe9, type: 3}
       propertyPath: keyItems
@@ -2366,6 +2390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2263330573857381638, guid: 283416062b1843544a5c21eb4c094b73, type: 3}
+      propertyPath: m_TagString
+      value: DeathScreenManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3126750519397015075, guid: 283416062b1843544a5c21eb4c094b73, type: 3}
       propertyPath: m_TagString
       value: DeathScreen
@@ -2592,6 +2620,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Slot
       objectReference: {fileID: 0}
+    - target: {fileID: 1871940640064889766, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: m_TagString
+      value: KeyItemsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2151856832527978628, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: m_TagString
+      value: RespawnButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2390250710789317171, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
       propertyPath: m_TagString
       value: Slot
@@ -2684,9 +2720,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Slot
       objectReference: {fileID: 0}
+    - target: {fileID: 4377671593915366449, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: m_TagString
+      value: MainMenuButton
+      objectReference: {fileID: 0}
     - target: {fileID: 4456780142929608654, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
       propertyPath: m_TagString
       value: Slot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629625795006963331, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: m_TagString
+      value: GameOptionsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105189120683222456, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: m_TagString
+      value: GameOptions
       objectReference: {fileID: 0}
     - target: {fileID: 6088117423862841191, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2708,6 +2756,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Slot
       objectReference: {fileID: 0}
+    - target: {fileID: 7209610206070264771, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: m_TagString
+      value: QuitGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775736007988915464, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: m_TagString
+      value: FullScreenButton
+      objectReference: {fileID: 0}
     - target: {fileID: 7853803741068568769, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
       propertyPath: m_TagString
       value: Slot
@@ -2721,13 +2777,57 @@ PrefabInstance:
       value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
       propertyPath: death
       value: 
-      objectReference: {fileID: 78129593}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: options
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: keyItems
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: QuitButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: OptionsButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: RespawnButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: KeyItemsButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: MainMenuButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 2369354810286416953}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: OptionsStartButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975994104745219837, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
+      propertyPath: InventoryStartButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9051058724952366800, guid: 5d8563e86aab4f846b647e8f8824fbbb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

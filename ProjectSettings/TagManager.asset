@@ -28,6 +28,14 @@ TagManager:
   - DescentGFX
   - PlayerLocator
   - FadeIn
+  - GameOptions
+  - FullScreenButton
+  - KeyItemsButton
+  - GameOptionsButton
+  - RespawnButton
+  - MainMenuButton
+  - QuitGameButton
+  - DeathScreenManager
   layers:
   - Default
   - TransparentFX
