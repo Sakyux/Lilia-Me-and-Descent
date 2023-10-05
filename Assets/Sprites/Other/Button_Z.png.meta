@@ -101,10 +101,10 @@ TextureImporter:
       name: Button_Z_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 66
-        width: 440
-        height: 383
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Button_Z_0: -6564596720875129426
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
