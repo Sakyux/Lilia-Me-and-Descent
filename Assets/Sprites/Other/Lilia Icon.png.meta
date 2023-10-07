@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lilia Icon_0: -1989698205567932194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
