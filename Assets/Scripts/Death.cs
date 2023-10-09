@@ -13,6 +13,10 @@ public class Death : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        deathScreen = GameObject.Find("DeathScreen");
+        playerController = GameObject.Find("Lilia").GetComponent<PlayerController>();
+        saveData = GameObject.Find("SaveGame").GetComponent<SaveData>();
+
         Invoke("DisableDeathScreen", 0.01f);
     }
 

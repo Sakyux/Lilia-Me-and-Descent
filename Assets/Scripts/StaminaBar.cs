@@ -13,9 +13,9 @@ public class StaminaBar : MonoBehaviour
 
     private void Start()
     {
-        StaminaBarLeft = GameObject.FindGameObjectWithTag("StaminaBarLeft").GetComponent<Image>();
-        StaminaBarRight = GameObject.FindGameObjectWithTag("StaminaBarRight").GetComponent<Image>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        StaminaBarLeft = GameObject.Find("StaminaBarLeft").GetComponent<Image>();
+        StaminaBarRight = GameObject.Find("StaminaBarRight").GetComponent<Image>();
+        playerController = GameObject.Find("Lilia").GetComponent<PlayerController>();
         targetOpacity = 0;
     }
     // Update is called once per frame

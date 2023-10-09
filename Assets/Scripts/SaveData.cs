@@ -12,11 +12,11 @@ public class SaveData : MonoBehaviour
      
     public void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        Enemy = GameObject.FindGameObjectWithTag("Descent");
-        doorManager = GameObject.FindGameObjectWithTag("DoorManager").GetComponent<DoorManager>();
-        itemManager = GameObject.FindGameObjectWithTag("ItemManager").GetComponent<ItemManager>();
-        keyItems = GameObject.FindWithTag("KeyItems").GetComponent<KeyItems>();
+        player = GameObject.Find("Lilia");
+        Enemy = GameObject.Find("Enemy");
+        doorManager = GameObject.Find("DoorManager").GetComponent<DoorManager>();
+        itemManager = GameObject.Find("ItemManager").GetComponent<ItemManager>();
+        keyItems = GameObject.Find("KeyItems").GetComponent<KeyItems>();
         
         if (load == true) LoadGameData();
         SaveGameData();

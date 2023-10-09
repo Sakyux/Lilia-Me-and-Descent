@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
+        panel = GameObject.Find("DialogPopup");
         Invoke("Disable", 0.01f);
     }
 
@@ -22,10 +23,11 @@ public class Dialogue : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
             panel.SetActive(false);
             Debug.Log("trigger was trigger'nted");
-       
+        }
     }
 
     /*Alternative
