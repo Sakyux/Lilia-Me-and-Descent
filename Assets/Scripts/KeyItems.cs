@@ -28,6 +28,9 @@ public class KeyItems : MonoBehaviour
 
     void Start()
     {
+        KeyItemsMenu = GameObject.FindGameObjectWithTag("KeyItems");
+        MenuPanel = GameObject.FindGameObjectWithTag("Menu");
+
 
         slotsList[0].slot.Select();
         for (int i = 0; i <= 7; i++)
