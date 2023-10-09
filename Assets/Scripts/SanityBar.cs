@@ -11,9 +11,9 @@ public class SanityBar : MonoBehaviour
 
     private void Start()
     {
-        sanityBar = GameObject.FindGameObjectWithTag("SanityBarInner").GetComponent<Image>();
-        sanityBarBackGround = GameObject.FindGameObjectWithTag("SanityBarBackground").GetComponent<Image>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        sanityBar = GameObject.Find("SanityBarInner").GetComponent<Image>();
+        sanityBarBackGround = GameObject.Find("SanityBarBackground").GetComponent<Image>();
+        playerController = GameObject.Find("Lilia").GetComponent<PlayerController>();
     }
     void Update()
     {
