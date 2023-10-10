@@ -8,10 +8,16 @@ public class LockedDoor : MonoBehaviour
     public SpriteRenderer Door;
     public int requiredKeyID, doorNum;
     private bool playerNear;
-    public bool open = false, compare = true;
+    private bool open = false, compare = true;
     public DoorManager doorManager;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        Collider2D = transform.Find("LockedDoor").GetComponent<Collider2D>();
+        keyItems = GameObject.Find("KeyItems").GetComponent<KeyItems>();
+        doorManager = GameObject.Find("DoorManager").GetComponent<DoorManager>();
+        Door = transform.Find("LockedDoor").GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         if (DoorManager.Instance.DoorList[doorNum - 1].isActive != compare)

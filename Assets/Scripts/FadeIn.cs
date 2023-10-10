@@ -7,7 +7,7 @@ public class FadeIn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image = GameObject.FindGameObjectWithTag("FadeIn");
+        image = GameObject.Find("FadeIn");
         Invoke("Disable", 0.01f);
     }
 

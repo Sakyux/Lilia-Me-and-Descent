@@ -10,6 +10,13 @@ public class Items : MonoBehaviour
     private bool playerNear = false, check = true;
     public ItemManager itemManager;
     private bool collected = false;
+
+    private void Start()
+    {
+        itemManager = GameObject.Find("ItemManager").GetComponent<ItemManager>();
+        keyItems = GameObject.Find("KeyItems").GetComponent<KeyItems>();
+        item = GameObject.Find("Item" + itemNum + "GFX");
+    }
     void Update()
     {
         if (itemManager.itemList[itemNum].isActive != check)

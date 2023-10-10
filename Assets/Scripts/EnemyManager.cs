@@ -11,6 +11,13 @@ public class EnemyManager : MonoBehaviour
     public Transform player, playerLocator;
     public AIPath AIPath;
     public static Vector3 spawnPositon = new Vector3(0, 0, 0);
+    private void Start()
+    {
+        destinationSetter = GameObject.Find("Enemy").GetComponent<AIDestinationSetter>();
+        AIPath = GameObject.Find("Enemy").GetComponent<AIPath>();
+        player = GameObject.Find("Lilia").GetComponent<Transform>();
+        playerLocator = GameObject.Find("PlayerLocator").GetComponent<Transform>();
+    }
     void Update()
     {
         direction = player.position - transform.position;

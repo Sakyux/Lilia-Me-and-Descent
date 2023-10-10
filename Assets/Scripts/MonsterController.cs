@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
-    
     public GameObject player;
     public float speed;
 
     private float distance;
 
+    private void Start()
+    {
+        player = GameObject.Find("Lilia");
+    }
     void FixedUpdate()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);

@@ -28,7 +28,6 @@ public class KeyItems : MonoBehaviour
 
     void Start()
     {
-        //KeyItemsMenu = GameObject.FindGameObjectWithTag("KeyItems");
         MenuPanel = GameObject.Find("MenuPanel");
         menu = GameObject.Find("Menu").GetComponent<Menu>();
         menuStartButton = GameObject.Find("KeyItemsButton").GetComponent<Button>();

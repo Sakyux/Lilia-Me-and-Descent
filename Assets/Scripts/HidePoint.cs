@@ -2,19 +2,22 @@ using UnityEngine;
 
 public class HidePoint : MonoBehaviour
 {
-    public bool playerNear;
-    public bool playerHiding;
+    private bool playerNear;
+    private bool playerHiding;
     public LayerMask playerLayer;
-    public int rayHitIndex = -1;
-    public GameObject hidePoint;
-    public GameObject player;
+    private int rayHitIndex = -1;
+    public GameObject hidePoint, player, hidePrompt;
     public Vector3 hideSpot;
     public Vector3 playerLeaveSpot;
-    public GameObject hidePrompt;
     public PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
+        playerController = GameObject.Find("Lilia").GetComponent<PlayerController>();
+        hidePoint = GameObject.Find("HidePoint");
+        player = GameObject.Find("Lilia");
+        hidePrompt = GameObject.Find("HidePointPrompt");
+
         hideSpot = hidePoint.transform.position;
         Invoke("Disable", 0.01f);
     }
