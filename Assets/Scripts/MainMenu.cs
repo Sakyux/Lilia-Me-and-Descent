@@ -14,6 +14,12 @@ public class MainMenu : MonoBehaviour
     public string mainScene;
     void Start()
     {
+        continueButton = GameObject.Find("ContinueButton").GetComponent<Button>();
+        newGameButton = GameObject.Find("NewGameButton").GetComponent<Button>();
+        optionsButton = GameObject.Find("OptionsButton").GetComponent<Button>();
+        exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
+        fullScreenButton = GameObject.Find("FullScreenButton").GetComponent<Button>();
+
         SaveData.LoadOptionsData();
 
         newGameButton.Select();

@@ -19,6 +19,15 @@ public class Options : MonoBehaviour
 
     void Start()
     {
+        fullScreen = GameObject.Find("FullScreenButton").GetComponent<Button>();
+        back = GameObject.Find("BackButton").GetComponent<Button>();
+        newGame = GameObject.Find("NewGameButton").GetComponent<Button>();
+        volume = GameObject.Find("Slider").GetComponent<Slider>();
+        screenResolution = GameObject.Find("ResolutionDropDown").GetComponent<TMP_Dropdown>();
+        optionsPanel = GameObject.Find("Options");
+        toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();
+        volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();
+
         ChangeResolution(resolutionIndex);
         AudioListener.volume = volumeLevel;
         volume.value = volumeLevel;

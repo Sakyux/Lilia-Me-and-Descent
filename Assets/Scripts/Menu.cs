@@ -10,22 +10,24 @@ public class Menu : MonoBehaviour
     public Button KeyItemsButton, RespawnButton, OptionsButton, MainMenuButton, QuitButton, OptionsStartButton, InventoryStartButton;
     public PlayerController playerController;
     public KeyItems keyItems;
+    public SaveData saveData;
     private void Start()
     {
-        menu = GameObject.FindGameObjectWithTag("Menu");
-        options = GameObject.FindGameObjectWithTag("GameOptions");
-        inventory = GameObject.FindGameObjectWithTag("KeyItems");
+        menu = GameObject.Find("MenuPanel");
+        options = GameObject.Find("GameOptions");
+        inventory = GameObject.Find("KeyItems");
+        saveData = GameObject.Find("SaveGame").GetComponent<SaveData>();
 
-        death = GameObject.FindGameObjectWithTag("DeathScreenManager").GetComponent<Death>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        keyItems = GameObject.FindGameObjectWithTag("KeyItems").GetComponent<KeyItems>();
-        KeyItemsButton = GameObject.FindGameObjectWithTag("KeyItemsButton").GetComponent<Button>();
-        RespawnButton = GameObject.FindGameObjectWithTag("RespawnButton").GetComponent<Button>();
-        OptionsButton = GameObject.FindGameObjectWithTag("GameOptionsButton").GetComponent<Button>();
-        MainMenuButton = GameObject.FindGameObjectWithTag("MainMenuButton").GetComponent<Button>();
-        QuitButton = GameObject.FindGameObjectWithTag("QuitGameButton").GetComponent<Button>();
-        OptionsStartButton = GameObject.FindGameObjectWithTag("FullScreenButton").GetComponent<Button>();
-        InventoryStartButton = GameObject.FindGameObjectWithTag("Slot").GetComponent<Button>();
+        death = GameObject.Find("DeathScreenManager").GetComponent<Death>();
+        playerController = GameObject.Find("Lilia").GetComponent<PlayerController>();
+        keyItems = GameObject.Find("KeyItems").GetComponent<KeyItems>();
+        KeyItemsButton = GameObject.Find("KeyItemsButton").GetComponent<Button>();
+        RespawnButton = GameObject.Find("RespawnButton").GetComponent<Button>();
+        OptionsButton = GameObject.Find("GameOptionsButton").GetComponent<Button>();
+        MainMenuButton = GameObject.Find("MainMenuButton").GetComponent<Button>();
+        QuitButton = GameObject.Find("QuitGameButton").GetComponent<Button>();
+        OptionsStartButton = GameObject.Find("FullScreenButton").GetComponent<Button>();
+        InventoryStartButton = GameObject.Find("Slot1").GetComponent<Button>();
 
         KeyItemsButton.onClick.AddListener(KeyItems);
         RespawnButton.onClick.AddListener(death.respawn);
@@ -41,16 +43,15 @@ public class Menu : MonoBehaviour
             ToggleMenu();
         }
 
-        if (menu.activeSelf || inventory.activeSelf || options.activeSelf) playerController.canMove = false;
-        else playerController.canMove = true;
+        CheckForMenus();
 
         if (Input.GetKeyDown(KeyCode.X)) options.SetActive(false);
     }
     public void ToggleMenu()
     {
-            toggle = !toggle;
-            menu.SetActive(toggle);
-            KeyItemsButton.Select();
+        toggle = !toggle;
+        menu.SetActive(toggle);
+        KeyItemsButton.Select();
     }
     public void KeyItems()
     {
@@ -66,18 +67,25 @@ public class Menu : MonoBehaviour
     }
     public void MainMenu()
     {
-        SaveData.Instance.SaveGameData();
+        saveData.SaveGameData();
         SceneManager.LoadScene("MainMenu");
     }
     public void Exit()
     {
-        SaveData.Instance.SaveGameData();
+        saveData.SaveGameData();
         Application.Quit();
+    }
+
+    private void CheckForMenus()
+    {
+        if (menu.activeSelf || inventory.activeSelf || options.activeSelf) playerController.canMove = false;
+        else playerController.canMove = true;
     }
 
     void DisableMenu()
     {
         menu.SetActive(false);
         inventory.SetActive(false);
+        playerController.canMove = true;
     }
 }
