@@ -1124,8 +1124,8 @@ MonoBehaviour:
   optionsButton: {fileID: 0}
   exitButton: {fileID: 0}
   fullScreenButton: {fileID: 0}
-  optionsMenu: {fileID: 5917585443997065656}
-  mainMenu: {fileID: 512085632647886417}
+  optionsMenu: {fileID: 0}
+  mainMenu: {fileID: 0}
   mainScene: SampleScene
 --- !u!114 &5282690211274047380
 MonoBehaviour:
@@ -1195,11 +1195,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &5917585443997065656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7318675306989457914, guid: 5e4e4b1f264f3294f92a72299c16f174, type: 3}
-  m_PrefabInstance: {fileID: 2181053640958712783}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6282449752943925174
 GameObject:
   m_ObjectHideFlags: 0

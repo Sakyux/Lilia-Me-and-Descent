@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour
         optionsButton = GameObject.Find("OptionsButton").GetComponent<Button>();
         exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
         fullScreenButton = GameObject.Find("FullScreenButton").GetComponent<Button>();
+        optionsMenu = GameObject.Find("Options");
+        mainMenu = GameObject.Find("MainMenu");
 
         SaveData.LoadOptionsData();
 
