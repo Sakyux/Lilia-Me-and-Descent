@@ -771,6 +771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FullScreenButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3188429367466741207, guid: 5e4e4b1f264f3294f92a72299c16f174, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3343077558282332320, guid: 5e4e4b1f264f3294f92a72299c16f174, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5

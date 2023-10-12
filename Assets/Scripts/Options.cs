@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Options : MonoBehaviour
 {
     // buttons
-    public Button fullScreen, back, newGame;
+    public Button fullScreen, back, menuStartButton;
     public Slider volume;
     public TMP_Dropdown screenResolution;
     public GameObject optionsPanel;
@@ -15,26 +15,22 @@ public class Options : MonoBehaviour
     public static int resolutionIndex = 1;
     public Toggle toggleFullscreen;
     public TMP_Text volumeText;
-
-    //public GameObject SliderTest;
-
-
     void Start()
     {
-        //SliderTest = GameObject.Find("Slider");
+        if(GameObject.Find("GameOptions") == null) optionsPanel = GameObject.Find("Options");
+        else optionsPanel = GameObject.Find("GameOptions");
+
+        if (GameObject.Find("NewGameButton") == null) menuStartButton = GameObject.Find("KeyItemsButton").GetComponent<Button>();
+        else menuStartButton = GameObject.Find("NewGameButton").GetComponent<Button>();
+
+        volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();
+        toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();
+        screenResolution = GameObject.Find("ResolutionDropDown").GetComponent<TMP_Dropdown>();
         volume = GameObject.Find("Slider").GetComponent<Slider>();
         fullScreen = GameObject.Find("FullScreenButton").GetComponent<Button>();
         back = GameObject.Find("BackButton").GetComponent<Button>();
-        newGame = GameObject.Find("NewGameButton").GetComponent<Button>();
-       
         
-        optionsPanel = GameObject.Find("Options");
         
-        volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();///
-        screenResolution = GameObject.Find("ResolutionDropDown").GetComponent<TMP_Dropdown>();//
-        toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();//
-
-        //WIP
         ChangeResolution(resolutionIndex);
         AudioListener.volume = volumeLevel;
         volume.value = volumeLevel;
@@ -97,7 +93,7 @@ public class Options : MonoBehaviour
     void Back()
     {
         optionsPanel.SetActive(false);
-        newGame.Select();
+        menuStartButton.Select();
     }
 
     void DisableOptions()
