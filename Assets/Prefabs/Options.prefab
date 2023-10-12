@@ -1747,11 +1747,12 @@ MonoBehaviour:
   fullScreen: {fileID: 2284363977400664349}
   back: {fileID: 5650162772456659335}
   newGame: {fileID: 0}
-  volume: {fileID: 275358280658994190}
+  volume: {fileID: 0}
   screenResolution: {fileID: 903360812226010596}
   optionsPanel: {fileID: 7318675306989457914}
   toggleFullscreen: {fileID: 245577167559749077}
   volumeText: {fileID: 44517666082241609}
+  SliderTest: {fileID: 0}
 --- !u!1 &7552748907321704796
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,18 +16,25 @@ public class Options : MonoBehaviour
     public Toggle toggleFullscreen;
     public TMP_Text volumeText;
 
+    //public GameObject SliderTest;
+
 
     void Start()
     {
+        //SliderTest = GameObject.Find("Slider");
+        volume = GameObject.Find("Slider").GetComponent<Slider>();
         fullScreen = GameObject.Find("FullScreenButton").GetComponent<Button>();
         back = GameObject.Find("BackButton").GetComponent<Button>();
         newGame = GameObject.Find("NewGameButton").GetComponent<Button>();
-        volume = GameObject.Find("Slider").GetComponent<Slider>();
-        screenResolution = GameObject.Find("ResolutionDropDown").GetComponent<TMP_Dropdown>();
+       
+        
         optionsPanel = GameObject.Find("Options");
-        toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();
-        volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();
+        
+        volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();///
+        screenResolution = GameObject.Find("ResolutionDropDown").GetComponent<TMP_Dropdown>();//
+        toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();//
 
+        //WIP
         ChangeResolution(resolutionIndex);
         AudioListener.volume = volumeLevel;
         volume.value = volumeLevel;
