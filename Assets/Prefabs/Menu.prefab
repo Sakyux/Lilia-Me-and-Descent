@@ -744,19 +744,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37987e2e100f07247bd1be5c81f454ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 8729047923130994186}
-  options: {fileID: 5105189120683222456}
-  inventory: {fileID: 8045693109593395749}
+  menu: {fileID: 0}
+  options: {fileID: 0}
+  inventory: {fileID: 0}
   death: {fileID: 0}
-  KeyItemsButton: {fileID: 461572353804622743}
-  RespawnButton: {fileID: 2624532936048764122}
-  OptionsButton: {fileID: 8618604957762569094}
-  MainMenuButton: {fileID: 4984087948729651799}
-  QuitButton: {fileID: 7352081978389028371}
-  OptionsStartButton: {fileID: 4135110415694223668}
-  InventoryStartButton: {fileID: 5802363276444019586}
+  KeyItemsButton: {fileID: 0}
+  RespawnButton: {fileID: 0}
+  OptionsButton: {fileID: 0}
+  MainMenuButton: {fileID: 0}
+  QuitButton: {fileID: 0}
+  OptionsStartButton: {fileID: 0}
+  InventoryStartButton: {fileID: 0}
   playerController: {fileID: 0}
-  keyItems: {fileID: 624671919165821138}
+  keyItems: {fileID: 0}
+  saveData: {fileID: 0}
 --- !u!1 &1348154307524352888
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +924,7 @@ GameObject:
   - component: {fileID: 5299079878254550218}
   m_Layer: 5
   m_Name: Slot4
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1312,7 +1313,7 @@ GameObject:
   - component: {fileID: 461572353804622743}
   m_Layer: 5
   m_Name: KeyItemsButton
-  m_TagString: Untagged
+  m_TagString: KeyItemsButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1700,8 +1701,8 @@ GameObject:
   - component: {fileID: 8391452405224555271}
   - component: {fileID: 2624532936048764122}
   m_Layer: 5
-  m_Name: CheckPointButton
-  m_TagString: Untagged
+  m_Name: RespawnButton
+  m_TagString: RespawnButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1822,7 +1823,7 @@ GameObject:
   - component: {fileID: 4812135482705539449}
   m_Layer: 5
   m_Name: Slot8
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2208,7 +2209,7 @@ GameObject:
   - component: {fileID: 8061652590688870821}
   m_Layer: 5
   m_Name: Slot2
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2479,7 +2480,7 @@ GameObject:
   - component: {fileID: 3069344067383502652}
   m_Layer: 5
   m_Name: Slot6
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3069,7 +3070,7 @@ GameObject:
   - component: {fileID: 4984087948729651799}
   m_Layer: 5
   m_Name: MainMenuButton
-  m_TagString: Untagged
+  m_TagString: MainMenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3190,7 +3191,7 @@ GameObject:
   - component: {fileID: 5515535426218480576}
   m_Layer: 5
   m_Name: Slot5
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3310,8 +3311,8 @@ GameObject:
   - component: {fileID: 5886944591825512209}
   - component: {fileID: 8618604957762569094}
   m_Layer: 5
-  m_Name: Optionsbutton
-  m_TagString: Untagged
+  m_Name: GameOptionsButton
+  m_TagString: GameOptionsButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3565,8 +3566,8 @@ GameObject:
   - component: {fileID: 6872945452180477801}
   - component: {fileID: 7178070538690160157}
   m_Layer: 5
-  m_Name: Options 1
-  m_TagString: Untagged
+  m_Name: GameOptions
+  m_TagString: GameOptions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3652,6 +3653,8 @@ MonoBehaviour:
   volume: {fileID: 2450163439060525524}
   screenResolution: {fileID: 3972231702897614297}
   optionsPanel: {fileID: 5105189120683222456}
+  toggleFullscreen: {fileID: 0}
+  volumeText: {fileID: 0}
 --- !u!1 &5501181714261962656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,7 +4147,7 @@ GameObject:
   - component: {fileID: 5802363276444019586}
   m_Layer: 5
   m_Name: Slot1
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4682,7 +4685,7 @@ GameObject:
   - component: {fileID: 3630553110311693322}
   m_Layer: 5
   m_Name: Slot7
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4877,8 +4880,8 @@ GameObject:
   - component: {fileID: 6561541678908906449}
   - component: {fileID: 7352081978389028371}
   m_Layer: 5
-  m_Name: QuitButton
-  m_TagString: Untagged
+  m_Name: QuitGameButton
+  m_TagString: QuitGameButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5506,8 +5509,8 @@ GameObject:
   - component: {fileID: 2073140799155817408}
   - component: {fileID: 4135110415694223668}
   m_Layer: 5
-  m_Name: fullScreen
-  m_TagString: Untagged
+  m_Name: FullScreenButton
+  m_TagString: FullScreenButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5749,7 +5752,7 @@ GameObject:
   - component: {fileID: 9120030153395333110}
   m_Layer: 5
   m_Name: Slot3
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5870,7 +5873,7 @@ GameObject:
   - component: {fileID: 624671919165821138}
   m_Layer: 5
   m_Name: KeyItems
-  m_TagString: Untagged
+  m_TagString: KeyItems
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5983,10 +5986,10 @@ MonoBehaviour:
   - itemSprite: {fileID: -6731949696211325574, guid: 2b66266fe22cf474e8479ec4be394b25, type: 3}
   - itemSprite: {fileID: -6564596720875129426, guid: 27bbdac0f488e1b48bf3a8a6cae7953a, type: 3}
   heldItem: 0
-  KeyItemsMenu: {fileID: 8045693109593395749}
-  MenuPanel: {fileID: 8729047923130994186}
-  menu: {fileID: 8975994104745219837}
-  menuStartButton: {fileID: 461572353804622743}
+  KeyItemsMenu: {fileID: 0}
+  MenuPanel: {fileID: 0}
+  menu: {fileID: 0}
+  menuStartButton: {fileID: 0}
 --- !u!1 &8237222245400675189
 GameObject:
   m_ObjectHideFlags: 0
@@ -6280,8 +6283,8 @@ GameObject:
   - component: {fileID: 2223495587825666427}
   - component: {fileID: 831762244357228823}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: MenuPanel
+  m_TagString: Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8018390079905412428}
   m_Layer: 5
   m_Name: HidePointPrompt
-  m_TagString: Untagged
+  m_TagString: HidePointPrompt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1722246269985497190
 MonoBehaviour:
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6780441454706605491}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HidePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 6043539183564259877}
   - component: {fileID: 3187594612009096588}
   - component: {fileID: 2021056632424174658}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Square (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,9 +409,9 @@ GameObject:
   - component: {fileID: 7068720289185389537}
   - component: {fileID: 6948855228061900006}
   - component: {fileID: 4832861939507969796}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: HidePoint
-  m_TagString: Untagged
+  m_TagString: HidePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -500,17 +500,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e13c3387cfe92942ba8e168ac59b47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNear: 0
-  playerHiding: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 1
-  rayHitIndex: -1
-  hidePoint: {fileID: 2796559469499683370}
+  hidePoint: {fileID: 0}
   player: {fileID: 0}
+  hidePrompt: {fileID: 0}
   hideSpot: {x: 0, y: 0, z: 0}
   playerLeaveSpot: {x: 0, y: 0, z: 0}
-  hidePrompt: {fileID: 778517216357969179}
   playerController: {fileID: 0}
 --- !u!1 &3268149701014584180
 GameObject:
@@ -546,7 +543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 86.79997}
+  m_AnchoredPosition: {x: 0, y: 51.499985}
   m_SizeDelta: {x: 175.3323, y: 24.0565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2532093867619228863
@@ -657,7 +654,7 @@ GameObject:
   - component: {fileID: 4574542395730825701}
   - component: {fileID: 5088445238397836871}
   - component: {fileID: 5965204040281003517}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Square (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -788,7 +785,7 @@ GameObject:
   - component: {fileID: 7544742276273418294}
   - component: {fileID: 6530567891098233013}
   - component: {fileID: 5259353985303299132}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +916,7 @@ GameObject:
   - component: {fileID: 1978510214286736072}
   - component: {fileID: 4471469873892976271}
   - component: {fileID: 7071435700125737851}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: 86.8}
+  m_AnchoredPosition: {x: -14, y: 51.5}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2230054027537162600
@@ -1104,7 +1101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6564596720875129426, guid: 27bbdac0f488e1b48bf3a8a6cae7953a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

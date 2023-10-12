@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9058843473258538207}
   m_Layer: 0
   m_Name: LockedDoor1
-  m_TagString: Untagged
+  m_TagString: LockedDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,10 +103,10 @@ MonoBehaviour:
   keyItems: {fileID: 0}
   unlockedSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   lockedSprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  Door: {fileID: 2471162863888658801}
+  Door: {fileID: 0}
   requiredKeyID: 1
   doorNum: 1
-  doorManager: {fileID: 3677652211216903359}
+  doorManager: {fileID: 0}
 --- !u!61 &9058843473258538207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 3677652211216903359}
   m_Layer: 0
   m_Name: DoorManager
-  m_TagString: Untagged
+  m_TagString: DoorManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 7196006844773117305}
   m_Layer: 0
   m_Name: LockedDoor2
-  m_TagString: Untagged
+  m_TagString: LockedDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -563,14 +563,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c5b916135a31f488e2dec7c19e1921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider2D: {fileID: 9221707419254968592}
+  Collider2D: {fileID: 0}
   keyItems: {fileID: 0}
   unlockedSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   lockedSprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  Door: {fileID: 5944637420079184626}
+  Door: {fileID: 0}
   requiredKeyID: 2
   doorNum: 2
-  doorManager: {fileID: 3677652211216903359}
+  doorManager: {fileID: 0}
 --- !u!61 &7196006844773117305
 BoxCollider2D:
   m_ObjectHideFlags: 0

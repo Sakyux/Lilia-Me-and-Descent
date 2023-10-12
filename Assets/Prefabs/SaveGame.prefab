@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4338652001945321265}
   m_Layer: 0
   m_Name: SaveGame
-  m_TagString: Untagged
+  m_TagString: SaveGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9174090fea302094180d24f9266451b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorManager: {fileID: 0}
   keyItems: {fileID: 0}
+  doorManager: {fileID: 0}
   player: {fileID: 0}
+  Enemy: {fileID: 0}
   itemManager: {fileID: 0}

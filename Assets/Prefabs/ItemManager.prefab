@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7285572208059243029}
   m_Layer: 0
   m_Name: ItemManager
-  m_TagString: Untagged
+  m_TagString: ItemManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,9 +63,9 @@ GameObject:
   - component: {fileID: 8244511317782369773}
   - component: {fileID: 592923216064185577}
   - component: {fileID: 3010504774153976460}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Item0
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,11 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744a776895ce394478b5725e876865e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 1266955174150692371}
+  item: {fileID: 0}
   keyItems: {fileID: 0}
   ItemID: 1
   itemNum: 0
-  itemManager: {fileID: 7285572208059243029}
+  itemManager: {fileID: 0}
 --- !u!1 &1266955174150692371
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,8 +211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4610678670103110267}
   - component: {fileID: 5247520813763348399}
-  m_Layer: 0
-  m_Name: Item0
+  m_Layer: 2
+  m_Name: Item0GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,8 +295,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2913758373774360028}
   - component: {fileID: 267061201161426294}
-  m_Layer: 0
-  m_Name: Item2
+  m_Layer: 2
+  m_Name: Item2GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,9 +381,9 @@ GameObject:
   - component: {fileID: 7271380072649230483}
   - component: {fileID: 998003326273658172}
   - component: {fileID: 9113863895849088417}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Item2
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,9 +531,9 @@ GameObject:
   - component: {fileID: 7722757523327484590}
   - component: {fileID: 1476713839062838328}
   - component: {fileID: 3054693357417691388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Item1
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,8 +679,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3097814449643016175}
   - component: {fileID: 5937869734299795355}
-  m_Layer: 0
-  m_Name: Item1
+  m_Layer: 2
+  m_Name: Item1GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

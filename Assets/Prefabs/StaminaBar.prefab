@@ -118,11 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StaminaBarLeft: {fileID: 1251688891252313910}
   StaminaBarRight: {fileID: 7717830313058900196}
-  currentBarOpacity: 0
-  targetOpacity: 0
   playerController: {fileID: 0}
   stamina: 0
-  currentValue: 0
 --- !u!1 &4888676167446713956
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +133,7 @@ GameObject:
   - component: {fileID: 7717830313058900196}
   m_Layer: 5
   m_Name: StaminaBarRight
-  m_TagString: Untagged
+  m_TagString: StaminaBarRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,7 +208,7 @@ GameObject:
   - component: {fileID: 1251688891252313910}
   m_Layer: 5
   m_Name: StaminaBarLeft
-  m_TagString: Untagged
+  m_TagString: StaminaBarLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

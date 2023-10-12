@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5793051870368855219}
   m_Layer: 2
   m_Name: DescentGFX
-  m_TagString: Untagged
+  m_TagString: DescentGFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 7160285016378468879}
   m_Layer: 2
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Descent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 1607898947475702535}
   m_Layer: 2
   m_Name: PlayerLocator
-  m_TagString: Untagged
+  m_TagString: PlayerLocator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
