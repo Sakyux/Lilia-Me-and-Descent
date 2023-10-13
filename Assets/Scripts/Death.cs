@@ -39,7 +39,7 @@ public class Death : MonoBehaviour
     {
         playerController.isDead = false;
         deathScreen.SetActive(false);
-        playerController.sanity = 100;
+        PlayerController.sanity = 100;
         saveData.LoadGameData();
     }
 

@@ -18,7 +18,7 @@ public class SanityBar : MonoBehaviour
     void Update()
     {
 
-        sanity = playerController.sanity;
+        sanity = PlayerController.sanity;
         sanityBar.fillAmount = (1 - sanity / 100);
 
         if (playerController.isDead == true)

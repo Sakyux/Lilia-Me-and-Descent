@@ -1,15 +1,17 @@
 using Pathfinding;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
     private Vector2 direction;
     private bool playerSeen = false, lurking = false, charging = false;
-
+    private float distance;
     public LayerMask playerLayer;
     public AIDestinationSetter destinationSetter;
     public Transform player, playerLocator;
     public AIPath AIPath;
+
     public static Vector3 spawnPositon = new Vector3(0, 0, 0);
     private void Start()
     {
@@ -20,9 +22,15 @@ public class EnemyManager : MonoBehaviour
     }
     void Update()
     {
+        distance = Vector2.Distance(transform.position, playerLocator.position);
         direction = player.position - transform.position;
         direction.Normalize();
         CastRay(direction);
+
+        if (distance <=2.5f)
+        {
+            PlayerController.sanity -= (2.5f - Vector2.Distance(transform.position, player.position)) / 50;
+        }
 
         if (playerSeen)
         {
@@ -32,12 +40,12 @@ public class EnemyManager : MonoBehaviour
         }
 
         // Checks if the enemy has reached the last seen location of the player
-        if (!playerSeen && Vector2.Distance(transform.position, playerLocator.position) <= 2)
+        if (!playerSeen && distance <= 2)
         {
             Wander();
         }
 
-        if (playerSeen &&  Vector2.Distance(transform.position, player.position) <= 4) Charge();
+        if (playerSeen &&  distance <= 4) Charge();
         // Button is a placeholder for anything that might alert the monster of the players position.
         if (Input.GetKeyDown(KeyCode.E)) Detect();
     }
@@ -50,7 +58,6 @@ public class EnemyManager : MonoBehaviour
         {
             if (!HidePoint.playerHiding) playerSeen = true;
             else playerSeen = false;
-            Detect();
         }
         else
         {
@@ -59,17 +66,18 @@ public class EnemyManager : MonoBehaviour
     }
 
     //Commented out for testing purposes, makes the enemy kill the player on contact.
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Death.Instance.Kill();
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Death.Instance.Kill();
+    //    }
+    //}
     void Wander()
     {
         playerLocator.position = new Vector3((float)Random.Range(-10, 10), (float)Random.Range(-10, 10), 10f);
         AIPath.maxSpeed = 2.5f;
+        charging = false;
     }
 
     void Detect()
@@ -83,7 +91,7 @@ public class EnemyManager : MonoBehaviour
         if (playerSeen)
         {
             Detect();
-            AIPath.maxSpeed = 8;
+            AIPath.maxSpeed = 6.5f;
             lurking = false;
             charging = true;
             Invoke("Wander", 3);

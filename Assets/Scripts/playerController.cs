@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     // Gameplay
     public float stamina = 100f;
-    public float sanity = 100f;
+    public static float sanity = 100f;
 
     // Animation
     public Animator animator;
