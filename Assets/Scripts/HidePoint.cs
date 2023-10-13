@@ -3,7 +3,7 @@ using UnityEngine;
 public class HidePoint : MonoBehaviour
 {
     private bool playerNear;
-    private bool playerHiding;
+    public static bool playerHiding;
     public LayerMask playerLayer;
     private int rayHitIndex = -1;
     public GameObject hidePoint, player, hidePrompt;

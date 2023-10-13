@@ -24,6 +24,12 @@ public class EnemyManager : MonoBehaviour
         direction.Normalize();
         CastRay(direction);
 
+        if (playerSeen)
+        {
+            if (!lurking) Invoke("Charge", 3);
+            Detect();
+            if (lurking) AIPath.maxSpeed = 1f;
+        }
 
         // Checks if the enemy has reached the last seen location of the player
         if (!playerSeen && Vector2.Distance(transform.position, playerLocator.position) <= 2)
@@ -31,6 +37,7 @@ public class EnemyManager : MonoBehaviour
             Wander();
         }
 
+        if (playerSeen &&  Vector2.Distance(transform.position, player.position) <= 4) Charge();
         // Button is a placeholder for anything that might alert the monster of the players position.
         if (Input.GetKeyDown(KeyCode.E)) Detect();
     }
@@ -41,13 +48,9 @@ public class EnemyManager : MonoBehaviour
 
         if (seePlayer.collider != null && seePlayer.collider.CompareTag("Player"))
         {
-            playerSeen = true;
-            //playerLocator.position = transform.position;
-            if (!lurking) Invoke("Charge", 3);
+            if (!HidePoint.playerHiding) playerSeen = true;
+            else playerSeen = false;
             Detect();
-            if (lurking) AIPath.maxSpeed = 1;
-
-
         }
         else
         {
@@ -72,14 +75,19 @@ public class EnemyManager : MonoBehaviour
     void Detect()
     {
         playerLocator.position = player.position;
+        if (!charging) lurking = true;
     }
 
     void Charge()
     {
-        Detect();
-        AIPath.maxSpeed = 8;
-        lurking = false;
-        charging = true;
-        Invoke("Wander", 3);
+        if (playerSeen)
+        {
+            Detect();
+            AIPath.maxSpeed = 8;
+            lurking = false;
+            charging = true;
+            Invoke("Wander", 3);
+        }
+        
     }
 }
