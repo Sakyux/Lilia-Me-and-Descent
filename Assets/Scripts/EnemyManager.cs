@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     private Vector2 direction;
-    private bool playerSeen = false;
+    private bool playerSeen = false, lurking = false, charging = false;
 
     public LayerMask playerLayer;
     public AIDestinationSetter destinationSetter;
@@ -42,31 +42,44 @@ public class EnemyManager : MonoBehaviour
         if (seePlayer.collider != null && seePlayer.collider.CompareTag("Player"))
         {
             playerSeen = true;
-            playerLocator.position = player.position;
-            AIPath.maxSpeed = 4;
+            //playerLocator.position = transform.position;
+            if (!lurking) Invoke("Charge", 3);
+            Detect();
+            if (lurking) AIPath.maxSpeed = 1;
+
+
         }
         else
         {
-            playerSeen = false;
+            if (!lurking) playerSeen = false;
         }
     }
 
-    // Commented out for testing purposes, makes the enemy kill the player on contact
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        Death.Instance.Kill();
-    //    }
-    //}
+    //Commented out for testing purposes, makes the enemy kill the player on contact.
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Death.Instance.Kill();
+        }
+    }
     void Wander()
     {
         playerLocator.position = new Vector3((float)Random.Range(-10, 10), (float)Random.Range(-10, 10), 10f);
-        AIPath.maxSpeed = 2;
+        AIPath.maxSpeed = 2.5f;
     }
 
     void Detect()
     {
         playerLocator.position = player.position;
+    }
+
+    void Charge()
+    {
+        Detect();
+        AIPath.maxSpeed = 8;
+        lurking = false;
+        charging = true;
+        Invoke("Wander", 3);
     }
 }

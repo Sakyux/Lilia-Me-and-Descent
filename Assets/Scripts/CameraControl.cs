@@ -11,7 +11,7 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Lilia"); // Creates "Player" tag to reference to
-        cameraSize = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        cameraSize = GameObject.Find("MainCamera").GetComponent<Camera>();
     }
 
     void Update()
