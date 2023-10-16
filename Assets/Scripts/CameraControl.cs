@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
 {
     public GameObject player;
     public Camera cameraSize;
-    private bool debugMode;
+    public bool debugMode;
 
     void Start()
     {
