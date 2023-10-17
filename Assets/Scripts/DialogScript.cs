@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             panel.SetActive(true);
-            Debug.Log("trigger was triggered");
+            //Debug.Log("trigger was triggered");
         }
     }
 
@@ -26,7 +26,7 @@ public class Dialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             panel.SetActive(false);
-            Debug.Log("trigger was trigger'nted");
+            //Debug.Log("trigger was trigger'nted");
         }
     }
 
