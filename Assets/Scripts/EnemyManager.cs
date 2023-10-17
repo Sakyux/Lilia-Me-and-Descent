@@ -39,7 +39,7 @@ public class EnemyManager : MonoBehaviour
         // Button is a placeholder for anything that might alert the monster of the players position.
         if (Input.GetKeyDown(KeyCode.E)) Detect();
 
-        if(distance <= 2) PlayerController.sanity -= 2 - distance/5;
+        //if(distance <= 2) PlayerController.sanity -= (2 - distance)/5;
     }
 
     private void CastRay(Vector2 direction)
@@ -61,7 +61,7 @@ public class EnemyManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) Death.Instance.Kill();
+        // if (other.CompareTag("Player")) Death.Instance.Kill();
     }
 
     void Wander()
