@@ -37,8 +37,8 @@ public class Options : MonoBehaviour
 
         if (volume != null && volume.IsActive())
         {
-            if (Input.GetKey(KeyCode.LeftArrow)) volume.value -= 0.5f;
-            if (Input.GetKey(KeyCode.RightArrow)) volume.value += 0.5f;
+            if (Input.GetKey(KeyCode.A)) volume.value -= 0.5f;
+            if (Input.GetKey(KeyCode.D)) volume.value += 0.5f;
         }
 
         fullScreen.onClick.AddListener(FullScreen);
@@ -51,7 +51,7 @@ public class Options : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X)) Back();
+        if (Input.GetKeyDown(KeyCode.Escape)) Back();
     }
 
     private void FullScreen()

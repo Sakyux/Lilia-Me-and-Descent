@@ -37,7 +37,7 @@ public class EnemyManager : MonoBehaviour
         if (playerSeen && distance > 4 && !charging && !lurking) Lurk();
 
         // Button is a placeholder for anything that might alert the monster of the players position.
-        if (Input.GetKeyDown(KeyCode.E)) Detect();
+        if (Input.GetKeyDown(KeyCode.Z)) Detect();
 
         //if(distance <= 2) PlayerController.sanity -= (2 - distance)/5;
     }

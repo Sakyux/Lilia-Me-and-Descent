@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Stamina
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             // Sprint function
             if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f && canSprint)
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             newPosition.y += movement.y * currentSpeed;
 
             // Left
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.A))
             {
                 movement.x -= 1;
                 transform.position = newPosition;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("Vertical", movement.y);
             }
             // Right
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D))
             {
                 movement.x += 1;
                 transform.position = newPosition;
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("Vertical", movement.y);
             }
             // Up
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.W))
             {
                 movement.y += 1;
                 transform.position = newPosition;
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("Vertical", movement.y);
             }
             // Down
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.S))
             {
                 movement.y -= 1;
                 transform.position = newPosition;

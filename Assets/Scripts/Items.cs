@@ -27,7 +27,7 @@ public class Items : MonoBehaviour
             if (itemManager.itemList[itemNum].isActive) collected = false;
         }
 
-        if (!collected && playerNear && Input.GetKeyDown(KeyCode.Z))
+        if (!collected && playerNear && Input.GetKeyDown(KeyCode.E))
         {
             itemManager.itemList[itemNum].isActive = false;
             keyItems.AddItem(ItemID);

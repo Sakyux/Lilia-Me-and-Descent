@@ -32,7 +32,7 @@ public class LockedDoor : MonoBehaviour
             }
         }
 
-        if (!open && playerNear && Input.GetKeyDown(KeyCode.Z))
+        if (!open && playerNear && Input.GetKeyDown(KeyCode.E))
         {
             if (keyItems.heldItem == requiredKeyID && !open)
             {
