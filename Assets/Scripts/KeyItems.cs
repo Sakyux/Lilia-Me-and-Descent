@@ -52,11 +52,12 @@ public class KeyItems : MonoBehaviour
     }
     void SelectItem(int slotNum)
     {
-        if (heldItem != slotsList[slotNum].itemID)
+        if (heldItem != -1) if (heldItem != slotsList[slotNum].itemID)
         {
             heldItem = slotsList[slotNum].itemID;
             menu.ToggleMenu();
             KeyItemsMenu.SetActive(false);
+                Invoke("DeselectItem", 0.01f);
         }
         else
         {
@@ -100,6 +101,11 @@ public class KeyItems : MonoBehaviour
             if (slotsList[i].itemID == 0) slotsList[i].slotSprite.color = new Color(1, 1, 1, 0);
             else slotsList[i].slotSprite.color = new Color(1, 1, 1, 1);
         }
+    }
+
+    void DeselectItem()
+    {
+        heldItem = 0;
     }
 
     public void Awake()
