@@ -10,6 +10,7 @@ public class LockedDoor : MonoBehaviour
     private bool playerNear;
     private bool open = false, compare = true;
     public DoorManager doorManager;
+    public GameLog gameLog;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class LockedDoor : MonoBehaviour
         keyItems = GameObject.Find("KeyItems").GetComponent<KeyItems>();
         doorManager = GameObject.Find("DoorManager").GetComponent<DoorManager>();
         Door = transform.Find("LockedDoor").GetComponent<SpriteRenderer>();
+        gameLog = GameObject.Find("GameLog").GetComponent<GameLog>();
     }
     void Update()
     {
@@ -31,7 +33,10 @@ public class LockedDoor : MonoBehaviour
                 open = false;
             }
         }
-
+        TryItem();
+    }
+    public void TryItem()
+    {
         if (!open && playerNear && Input.GetKeyDown(KeyCode.E))
         {
             if (keyItems.heldItem == requiredKeyID && !open)
@@ -40,10 +45,10 @@ public class LockedDoor : MonoBehaviour
                 UnlockDoor();
                 open = true;
             }
-            else if (keyItems.heldItem != 0 && !open) Debug.Log("incorrect item");
+            else if (keyItems.heldItem != 0 && !open) gameLog.AddEvent("This is the wrong item.");
         }
-    }
 
+    }
     private void UnlockDoor()
     {
         Collider2D.isTrigger = true;

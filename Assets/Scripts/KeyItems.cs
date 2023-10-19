@@ -24,6 +24,7 @@ public class KeyItems : MonoBehaviour
     public Menu menu;
     public Button menuStartButton;
     public static KeyItems Instance;
+    public GameLog gameLog; 
     
 
     void Start()
@@ -32,6 +33,7 @@ public class KeyItems : MonoBehaviour
         menu = GameObject.Find("Menu").GetComponent<Menu>();
         menuStartButton = GameObject.Find("KeyItemsButton").GetComponent<Button>();
         KeyItemsMenu = GameObject.Find("KeyItems");
+        gameLog = GameObject.Find("GameLog").GetComponent<GameLog>();
 
 
         slotsList[0].slot.Select();
@@ -57,7 +59,7 @@ public class KeyItems : MonoBehaviour
             heldItem = slotsList[slotNum].itemID;
             menu.ToggleMenu();
             KeyItemsMenu.SetActive(false);
-                Invoke("DeselectItem", 0.01f);
+            Invoke("DeselectItem", 0.01f);
         }
         else
         {
@@ -91,6 +93,7 @@ public class KeyItems : MonoBehaviour
             }
             heldItem = 0;
         }
+        gameLog.AddEvent("Item Used.");
     }
 
     public void ReloadKeyItems()
