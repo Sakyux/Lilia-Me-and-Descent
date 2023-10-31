@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement, newPosition;
     private bool isSprinting = false;
     private float currentSpeed;
-    public bool canMove = true;
+    public static bool canMove = true;
     public bool isDead = false;
 
     // Gameplay

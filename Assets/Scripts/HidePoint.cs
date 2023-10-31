@@ -9,11 +9,9 @@ public class HidePoint : MonoBehaviour
     public GameObject hidePoint, player, hidePrompt;
     public Vector3 hideSpot;
     public Vector3 playerLeaveSpot;
-    public PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GameObject.Find("Lilia").GetComponent<PlayerController>();
         hidePoint = GameObject.Find("HidePoint");
         player = GameObject.Find("Lilia");
         hidePrompt = GameObject.Find("HidePointPrompt");
@@ -35,7 +33,7 @@ public class HidePoint : MonoBehaviour
             CastRay(Vector2.right, 3);
         }
 
-        if (playerHiding && Input.GetKeyDown(KeyCode.E) && playerController.canMove)
+        if (playerHiding && Input.GetKeyDown(KeyCode.E) && PlayerController.canMove)
         {
             playerHiding = false;
             playerLeaveSpot = hideSpot;
@@ -57,7 +55,7 @@ public class HidePoint : MonoBehaviour
             player.transform.position = playerLeaveSpot;
         }
 
-        if (!playerHiding && playerNear && playerController.canMove)
+        if (!playerHiding && playerNear && PlayerController.canMove)
         {
             hidePrompt.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))

@@ -10,12 +10,16 @@ public class Items : MonoBehaviour
     private bool playerNear = false, check = true;
     public ItemManager itemManager;
     private bool collected = false;
+    public GameObject itemPopup;
 
     private void Start()
     {
         itemManager = GameObject.Find("ItemManager").GetComponent<ItemManager>();
         keyItems = GameObject.Find("KeyItems").GetComponent<KeyItems>();
         item = GameObject.Find("Item" + itemNum + "GFX");
+        itemPopup = GameObject.Find("ItemPopup");
+
+        Invoke("Disable", 0.01f);
     }
     void Update()
     {
@@ -29,9 +33,21 @@ public class Items : MonoBehaviour
 
         if (!collected && playerNear && Input.GetKeyDown(KeyCode.E))
         {
+            itemPopup.SetActive(true);
             itemManager.itemList[itemNum].isActive = false;
             keyItems.AddItem(ItemID);
             collected = true;
+        }
+
+        if (itemPopup.gameObject.active)
+        {
+            PlayerController.canMove = false;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                itemPopup.SetActive(false);
+                PlayerController.canMove = true;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D other) 
@@ -44,5 +60,10 @@ public class Items : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
          if (other.CompareTag("Player")) playerNear = false;
+    }
+
+    private void Disable()
+    {
+        itemPopup.SetActive(false);
     }
 }

@@ -8,7 +8,6 @@ public class Menu : MonoBehaviour
     public Death death;
     private bool toggle;
     public Button KeyItemsButton, RespawnButton, OptionsButton, MainMenuButton, QuitButton, OptionsStartButton, InventoryStartButton;
-    public PlayerController playerController;
     public KeyItems keyItems;
     public SaveData saveData;
     private void Start()
@@ -19,7 +18,6 @@ public class Menu : MonoBehaviour
         saveData = GameObject.Find("SaveGame").GetComponent<SaveData>();
 
         death = GameObject.Find("DeathScreenManager").GetComponent<Death>();
-        playerController = GameObject.Find("Lilia").GetComponent<PlayerController>();
         keyItems = GameObject.Find("KeyItems").GetComponent<KeyItems>();
         KeyItemsButton = GameObject.Find("KeyItemsButton").GetComponent<Button>();
         RespawnButton = GameObject.Find("RespawnButton").GetComponent<Button>();
@@ -78,14 +76,14 @@ public class Menu : MonoBehaviour
 
     private void CheckForMenus()
     {
-        if (menu.activeSelf || inventory.activeSelf || options.activeSelf) playerController.canMove = false;
-        else playerController.canMove = true;
+        if (menu.activeSelf || inventory.activeSelf || options.activeSelf) PlayerController.canMove = false;
+        else PlayerController.canMove = true;
     }
 
     void DisableMenu()
     {
         menu.SetActive(false);
         inventory.SetActive(false);
-        playerController.canMove = true;
+        PlayerController.canMove = true;
     }
 }
