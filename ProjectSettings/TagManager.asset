@@ -3,39 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Wall
-  - Camera
-  - SanityBar
-  - SanityBarBackground
-  - SanityBarInner
-  - StaminaBarLeft
-  - StaminaBarRight
-  - DeathScreen
-  - SaveGame
-  - RespawnPoint
-  - EnemyRespawnPoint
-  - DoorManager
-  - LockedDoor
-  - HidePoint
-  - HidePointPrompt
-  - ItemManager
-  - Item
-  - Menu
-  - KeyItems
-  - Slot
-  - Descent
-  - DescentGFX
-  - PlayerLocator
-  - FadeIn
-  - GameOptions
-  - FullScreenButton
-  - KeyItemsButton
-  - GameOptionsButton
-  - RespawnButton
-  - MainMenuButton
-  - QuitGameButton
-  - DeathScreenManager
+  tags: []
   layers:
   - Default
   - TransparentFX
