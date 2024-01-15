@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class Options : MonoBehaviour
 {
     // buttons
-    public Button fullScreen, back, menuStartButton;
+    public Button fullScreen, controls, back, menuStartButton;
     public Slider volume;
     public TMP_Dropdown screenResolution;
     public GameObject optionsPanel;
     private bool isFullscreen = true;
     public static float volumeLevel = 1;
     public static int resolutionIndex = 1;
+    public static string controlOpt = "_old";
     public Toggle toggleFullscreen;
-    public TMP_Text volumeText;
+    public TMP_Text volumeText, controlsText;
     void Start()
     {
         if(GameObject.Find("GameOptions") == null) optionsPanel = GameObject.Find("Options");
@@ -24,14 +25,17 @@ public class Options : MonoBehaviour
         else menuStartButton = GameObject.Find("NewGameButton").GetComponent<Button>();
 
         volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();
+        controlsText = GameObject.Find("ControlsButton").GetComponent<TMP_Text>();
         toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();
         screenResolution = GameObject.Find("ResolutionDropDown").GetComponent<TMP_Dropdown>();
         volume = GameObject.Find("Slider").GetComponent<Slider>();
         fullScreen = GameObject.Find("FullScreenButton").GetComponent<Button>();
+        controls = GameObject.Find("ControlsButton").GetComponent<Button>();
         back = GameObject.Find("BackButton").GetComponent<Button>();
         
         
         ChangeResolution(resolutionIndex);
+        UpdateControlsButton();
         AudioListener.volume = volumeLevel;
         volume.value = volumeLevel;
 
@@ -44,6 +48,7 @@ public class Options : MonoBehaviour
         fullScreen.onClick.AddListener(FullScreen);
         volume.onValueChanged.AddListener(ChangeVolume);
         screenResolution.onValueChanged.AddListener(ChangeResolution);
+        controls.onClick.AddListener(ChangeControls);
         back.onClick.AddListener(Back);
 
         Invoke("DisableOptions", 0.01f);
@@ -71,6 +76,18 @@ public class Options : MonoBehaviour
         {
             volumeText.color = new Color32(157, 154, 195, 255);
         }
+    }
+
+    private void ChangeControls()
+    {
+        if (controlOpt == "_old") controlOpt = "_new";
+        else controlOpt = "_old";
+        UpdateControlsButton();
+    }
+    private void UpdateControlsButton()
+    {
+        if (controlOpt == "_old") controlsText.text = "Controls: Old-School";
+        else controlsText.text = "Controls: Modern";
     }
 
     private void ChangeResolution(int optionIndex)

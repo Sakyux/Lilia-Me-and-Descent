@@ -40,6 +40,7 @@ public class SaveData : MonoBehaviour
         // options 
         PlayerPrefs.SetFloat("Volume", Options.volumeLevel);
         PlayerPrefs.SetInt("Resolution", Options.resolutionIndex);
+        PlayerPrefs.SetString("Controls", Options.controlOpt);
 
         PlayerPrefs.Save();
         Debug.Log("Game saved");
@@ -49,6 +50,7 @@ public class SaveData : MonoBehaviour
     {
         Options.volumeLevel = PlayerPrefs.GetFloat("Volume");
         Options.resolutionIndex = PlayerPrefs.GetInt("Resolution");
+        Options.controlOpt = PlayerPrefs.GetString("Controls");
     }
     public void LoadGameData()
     {
