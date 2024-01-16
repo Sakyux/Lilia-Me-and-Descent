@@ -31,10 +31,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Checks position
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        
+        movement.x = Input.GetAxisRaw("Horizontal" + Options.controlOpt);
+        movement.y = Input.GetAxisRaw("Vertical" + Options.controlOpt);
 
         // (FOR DEBUGGING)
         // Debug.Log("Stamina is at: " + stamina);
@@ -47,7 +45,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Stamina
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if (Input.GetButton("Horizontal" + Options.controlOpt) || Input.GetButton("Vertical" + Options.controlOpt))
         {
             // Sprint function
             if (Input.GetKey(KeyCode.LeftShift) && stamina > 0f && canSprint)
@@ -58,8 +56,7 @@ public class PlayerController : MonoBehaviour
             } else {
                 currentSpeed = walkSpeed;
                 isSprinting = false;    
-            }   
-
+            }
             
         } else isSprinting = false;
 
@@ -72,34 +69,17 @@ public class PlayerController : MonoBehaviour
             newPosition.x += movement.x * currentSpeed;
             newPosition.y += movement.y * currentSpeed;
 
-            // Left
-            if (Input.GetKey(KeyCode.A))
+            // Horizontal movement
+            if (Input.GetButton("Horizontal" + Options.controlOpt))
             {
-                movement.x -= 1;
                 transform.position = newPosition;
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
             }
-            // Right
-            if (Input.GetKey(KeyCode.D))
+
+            // Vertical movement
+            if (Input.GetButton("Vertical" + Options.controlOpt))
             {
-                movement.x += 1;
-                transform.position = newPosition;
-                animator.SetFloat("Horizontal", movement.x);
-                animator.SetFloat("Vertical", movement.y);
-            }
-            // Up
-            if (Input.GetKey(KeyCode.W))
-            {
-                movement.y += 1;
-                transform.position = newPosition;
-                animator.SetFloat("Horizontal", movement.x);
-                animator.SetFloat("Vertical", movement.y);
-            }
-            // Down
-            if (Input.GetKey(KeyCode.S))
-            {
-                movement.y -= 1;
                 transform.position = newPosition;
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
@@ -139,6 +119,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            
         }
     }
 }

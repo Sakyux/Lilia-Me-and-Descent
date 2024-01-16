@@ -83,6 +83,7 @@ public class Options : MonoBehaviour
         if (controlOpt == "_old") controlOpt = "_new";
         else controlOpt = "_old";
         UpdateControlsButton();
+        Debug.Log(controlOpt);
     }
     private void UpdateControlsButton()
     {
