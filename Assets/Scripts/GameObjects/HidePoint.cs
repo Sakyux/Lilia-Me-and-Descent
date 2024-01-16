@@ -33,7 +33,7 @@ public class HidePoint : MonoBehaviour
             CastRay(Vector2.right, 3);
         }
 
-        if (playerHiding && Input.GetKeyDown(KeyCode.E) && PlayerController.canMove)
+        if (playerHiding && Input.GetButtonDown("confirm" + Options.controlOpt) && PlayerController.canMove)
         {
             playerHiding = false;
             playerLeaveSpot = hideSpot;
@@ -58,7 +58,7 @@ public class HidePoint : MonoBehaviour
         if (!playerHiding && playerNear && PlayerController.canMove)
         {
             hidePrompt.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("confirm" + Options.controlOpt))
             {
                 playerHiding = true;
                 player.transform.position = hideSpot;

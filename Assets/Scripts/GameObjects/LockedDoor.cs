@@ -37,7 +37,7 @@ public class LockedDoor : MonoBehaviour
     }
     public void TryItem()
     {
-        if (!open && playerNear && Input.GetKeyDown(KeyCode.E))
+        if (!open && playerNear && Input.GetButtonDown("confirm" + Options.controlOpt))
         {
             if (keyItems.heldItem == requiredKeyID && !open)
             {

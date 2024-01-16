@@ -45,7 +45,7 @@ public class KeyItems : MonoBehaviour
     }
     private void Update()
     { 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetButtonDown("menu" + Options.controlOpt))
         {
             MenuPanel.SetActive(true);
             menuStartButton.Select();

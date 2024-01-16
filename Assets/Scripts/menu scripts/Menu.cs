@@ -36,14 +36,14 @@ public class Menu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetButtonDown("menu" + Options.controlOpt))
         {
             ToggleMenu();
         }
 
         CheckForMenus();
 
-        if (Input.GetKeyDown(KeyCode.Tab)) options.SetActive(false);
+        if (Input.GetButtonDown("menu" + Options.controlOpt)) options.SetActive(false);
     }
     public void ToggleMenu()
     {

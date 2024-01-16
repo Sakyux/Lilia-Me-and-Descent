@@ -31,7 +31,7 @@ public class Items : MonoBehaviour
             if (itemManager.itemList[itemNum].isActive) collected = false;
         }
 
-        if (!collected && playerNear && Input.GetKeyDown(KeyCode.E))
+        if (!collected && playerNear && Input.GetButtonUp("confirm" + Options.controlOpt))
         {
             itemPopup.SetActive(true);
             itemManager.itemList[itemNum].isActive = false;
@@ -43,7 +43,7 @@ public class Items : MonoBehaviour
         {
             PlayerController.canMove = false;
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("confirm" + Options.controlOpt))
             {
                 itemPopup.SetActive(false);
                 PlayerController.canMove = true;
