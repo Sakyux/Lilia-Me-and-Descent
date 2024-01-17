@@ -42,6 +42,8 @@ public class KeyItems : MonoBehaviour
             int buttonIndex = i;
             slotsList[i].slot.onClick.AddListener(() => SelectItem(buttonIndex));
         }
+
+        Invoke("DisableKeyItems", 0.01f);
     }
     private void Update()
     { 
@@ -109,6 +111,12 @@ public class KeyItems : MonoBehaviour
     void DeselectItem()
     {
         heldItem = 0;
+    }
+
+    void DisableKeyItems()
+    {
+        gameObject.SetActive(false);
+        PlayerController.canMove = true;
     }
 
     public void Awake()

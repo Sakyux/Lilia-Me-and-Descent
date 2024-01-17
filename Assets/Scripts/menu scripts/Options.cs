@@ -9,7 +9,7 @@ public class Options : MonoBehaviour
     public Button fullScreen, controls, back, menuStartButton;
     public Slider volume;
     public TMP_Dropdown screenResolution;
-    public GameObject optionsPanel;
+    public GameObject optionsPanel, menuPanel;
     private bool isFullscreen = true;
     public static float volumeLevel = 1;
     public static int resolutionIndex = 1;
@@ -24,6 +24,7 @@ public class Options : MonoBehaviour
         if (GameObject.Find("NewGameButton") == null) menuStartButton = GameObject.Find("KeyItemsButton").GetComponent<Button>();
         else menuStartButton = GameObject.Find("NewGameButton").GetComponent<Button>();
 
+        menuPanel = GameObject.Find("MenuPanel");
         volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();
         controlsText = GameObject.Find("ControlsButton").GetComponent<TMP_Text>();
         toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();
@@ -110,8 +111,9 @@ public class Options : MonoBehaviour
 
     void Back()
     {
-        optionsPanel.SetActive(false);
+        menuPanel.SetActive(true);
         menuStartButton.Select();
+        optionsPanel.SetActive(false);
     }
 
     void DisableOptions()
