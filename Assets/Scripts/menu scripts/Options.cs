@@ -24,7 +24,8 @@ public class Options : MonoBehaviour
         if (GameObject.Find("NewGameButton") == null) menuStartButton = GameObject.Find("KeyItemsButton").GetComponent<Button>();
         else menuStartButton = GameObject.Find("NewGameButton").GetComponent<Button>();
 
-        menuPanel = GameObject.Find("MenuPanel");
+        if (GameObject.Find("MainMenu") == null) menuPanel = GameObject.Find("MenuPanel");
+        else menuPanel = GameObject.Find("MainMenu");
         volumeText = GameObject.Find("VolumeText").GetComponent<TMP_Text>();
         controlsText = GameObject.Find("ControlsButton").GetComponent<TMP_Text>();
         toggleFullscreen = GameObject.Find("FullScreenToggle").GetComponent<Toggle>();
